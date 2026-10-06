@@ -25,6 +25,13 @@
   link("dl-handbuch", k.handbuch, T.handbuch);
   link("kontakt", k.kontaktEmail ? "mailto:" + k.kontaktEmail : "", T.kontakt);
 
+  // Freiwillige Unterstützung: Abschnitt nur zeigen, wenn in konfig.js ein https-Link eingetragen ist
+  var unterstuetzen = document.getElementById("unterstuetzen");
+  if (unterstuetzen && /^https:\/\/[^\s"'<>]+$/.test(k.unterstuetzenLink || "")) {
+    document.getElementById("unterstuetzen-link").href = k.unterstuetzenLink;
+    unterstuetzen.hidden = false;
+  }
+
   // SHA-256-Prüfsummen der Downloads (schreibt webseite_veroeffentlichen.ps1 in konfig.js) – zum Prüfen, dass die Datei unverändert ist
   // Dateiname (mit Version) + Prüfsumme direkt unter dem jeweiligen Download
   var datei = function (url) { return url ? decodeURIComponent(url.split("/").pop()) : ""; };

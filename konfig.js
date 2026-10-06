@@ -8,6 +8,9 @@ window.EMMOKE = {
   downloadIos: "",            // App-Store-/TestFlight-Link, sobald vorhanden
   handbuch: "https://github.com/Emmoke/emmoke.github.io/releases/download/v0.16.0.38/Emmoke_Finanzplan_Benutzerhandbuch.pdf",
   kontaktEmail: "emmoke@outlook.de",
+  // Freiwillige Unterstützung (ohne Gegenleistung), z. B. "https://paypal.me/…". Leer = Abschnitt „Emmoke unterstützen“ ausgeblendet.
+  // Vor dem Einschalten: Datenschutz um den Zahlungsdienst ergänzen; Einnahmen steuerlich erfassen.
+  unterstuetzenLink: "",
   // Besuchszähler (GoatCounter, ohne Cookies): Code des eigenen GoatCounter-Kontos, z. B. "emmoke" für emmoke.goatcounter.com. Leer = kein Besuchszähler.
   // Vor dem Einschalten: Datenschutz ergänzen und in der CSP aller Seiten img-src/connect-src um https://*.goatcounter.com erweitern.
   besucheCode: "",
