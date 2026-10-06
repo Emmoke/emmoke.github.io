@@ -178,6 +178,17 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .lizenztext { white-space: pre-wrap; font-size: .8rem; background: var(--hell); border: 1px solid var(--linie); border-radius: 10px; padding: 16px; direction: ltr; text-align: left; }
 .anbieter { max-width: 820px; margin: 18px auto 0; text-align: center; }
 
+/* Firmen-Startseite */
+.karte-symbol { width: 44px; height: 44px; margin-bottom: 8px; }
+.leistung-hinweis { max-width: 820px; margin-top: 16px; }
+.programme { align-items: stretch; }
+.programm { display: flex; flex-direction: column; gap: 14px; }
+.programm img { border-radius: 10px; border: 1px solid var(--linie); }
+.programm-leer { justify-content: center; border-style: dashed; background: transparent; }
+.link-karte { text-decoration: none; color: inherit; transition: transform .15s, box-shadow .15s; }
+.link-karte:hover { transform: translateY(-2px); box-shadow: var(--schatten); }
+.link-karte p { color: var(--akzent); margin: 0; }
+
 /* Arabisch: von rechts nach links */
 [dir="rtl"] body { font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", "Noto Sans Arabic", Arial, sans-serif; line-height: 1.75; }
 [dir="rtl"] .haken li { padding-left: 0; padding-right: 30px; }
