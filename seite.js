@@ -26,10 +26,12 @@
   link("kontakt", k.kontaktEmail ? "mailto:" + k.kontaktEmail : "", T.kontakt);
 
   // SHA-256-Prüfsummen der Downloads (schreibt webseite_veroeffentlichen.ps1 in konfig.js) – zum Prüfen, dass die Datei unverändert ist
-  [["sha-windows", k.sha256Windows], ["sha-android", k.sha256Android], ["zert-android", k.zertifikatAndroid]].forEach(function (p) {
+  // Dateiname (mit Version) + Prüfsumme direkt unter dem jeweiligen Download
+  var datei = function (url) { return url ? decodeURIComponent(url.split("/").pop()) : ""; };
+  [["sha-windows", k.sha256Windows, datei(k.downloadWindows)], ["sha-android", k.sha256Android, datei(k.downloadAndroid)], ["zert-android", k.zertifikatAndroid, ""]].forEach(function (p) {
     var e = document.getElementById(p[0]);
     if (!e || !p[1]) return;
-    e.textContent = (e.dataset.titel || "SHA-256") + ": " + p[1];
+    e.textContent = (p[2] ? p[2] + " · " : "") + (e.dataset.titel || "SHA-256") + ": " + p[1];
     e.hidden = false;
   });
 

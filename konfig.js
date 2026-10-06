@@ -9,6 +9,7 @@ window.EMMOKE = {
   handbuch: "https://github.com/Emmoke/emmoke.github.io/releases/download/v0.16.0.38/Emmoke_Finanzplan_Benutzerhandbuch.pdf",
   kontaktEmail: "emmoke@outlook.de",
   // Besuchszähler (GoatCounter, ohne Cookies): Code des eigenen GoatCounter-Kontos, z. B. "emmoke" für emmoke.goatcounter.com. Leer = kein Besuchszähler.
+  // Vor dem Einschalten: Datenschutz ergänzen und in der CSP aller Seiten img-src/connect-src um https://*.goatcounter.com erweitern.
   besucheCode: "",
   // Download-Zähler: summiert die Downloads aller Releases dieses öffentlichen Repositorys (GitHub-Schnittstelle, ohne Cookies)
   sha256Windows: "138a53210c101e76bf3026c17343b96e0d67014b3233d077fb5ba63a662e7d4f",
