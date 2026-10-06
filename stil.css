@@ -71,6 +71,7 @@ nav a:hover { color: var(--akzent); }
 .betrag { font-size: 2.6rem; font-weight: 700; color: var(--navy); margin: 4px 0 0 !important; }
 .betrag span { font-size: 1rem; color: var(--grau); font-weight: 400; }
 .dl { display: flex; flex-direction: column; }
+.dl-symbol { width: 56px; height: 56px; margin-bottom: 10px; }
 .dl .knopf { margin-top: auto; text-align: center; }
 
 details { background: #fff; border: 1px solid var(--linie); border-radius: 10px; padding: 14px 18px; margin: 0 0 10px; }
