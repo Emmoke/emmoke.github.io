@@ -195,6 +195,45 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .quali h3 { margin-top: 0; }
 .quali h3 + p, .quali h3 + ul { margin-bottom: 16px; }
 
+/* Bauzeichner-Startseite: Zielgruppen, Ablauf, Zeitleiste, Anfrage */
+.held-grafik { width: 100%; height: auto; background: #fff; border-radius: var(--radius); box-shadow: var(--schatten); border: 1px solid var(--linie); }
+.zielgruppe { display: flex; flex-direction: column; border-top: 4px solid var(--akzent); }
+.zielgruppe .frage { font-weight: 600; color: var(--navy); }
+.zielgruppe .haken { margin-bottom: 14px; }
+.zielgruppe .knopf { margin-top: auto; align-self: flex-start; }
+.vorteile { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; list-style: none; padding: 0; margin: 0; }
+.vorteile li { background: #fff; border: 1px solid var(--linie); border-radius: var(--radius); padding: 16px; }
+.vorteile b { display: block; color: var(--navy); margin-bottom: 4px; }
+.vorteile span { color: var(--grau); font-size: .93rem; }
+.schritte { counter-reset: schritt; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; list-style: none; padding: 0; margin: 0; }
+.schritte li { counter-increment: schritt; background: #fff; border: 1px solid var(--linie); border-radius: var(--radius); padding: 18px; }
+.schritte li::before { content: counter(schritt); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 700; margin-bottom: 10px; }
+.schritte b { display: block; color: var(--navy); }
+.schritte span { color: var(--grau); font-size: .93rem; }
+.zeitleiste { list-style: none; margin: 0; padding: 0 0 0 22px; border-left: 3px solid var(--linie); }
+.zeitleiste li { position: relative; margin: 0 0 16px; }
+.zeitleiste li::before { content: ""; position: absolute; left: -31px; top: 5px; width: 15px; height: 15px; border-radius: 50%; background: #fff; border: 3px solid var(--akzent); }
+.zeitleiste li.wichtig::before { background: var(--akzent); }
+.zeitleiste b { display: block; color: var(--navy); }
+.zeitleiste span { color: #3a4655; font-size: .95rem; }
+.anfrage { display: grid; gap: 16px; }
+.anfrage fieldset { border: 1px solid var(--linie); border-radius: 10px; padding: 12px 16px; margin: 0; }
+.anfrage legend { font-weight: 600; color: var(--navy); padding: 0 6px; }
+.anfrage .wahl { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.anfrage .wahl label { display: flex; gap: 7px; align-items: center; cursor: pointer; }
+.anfrage .wahl input { width: 18px; height: 18px; accent-color: var(--navy); }
+.anfrage .felder { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.anfrage label.feld { display: flex; flex-direction: column; gap: 6px; font-size: .92rem; color: var(--grau); }
+.anfrage input[type=text], .anfrage textarea { font: inherit; color: var(--text); padding: 9px 11px; border: 1px solid var(--linie); border-radius: 9px; width: 100%; }
+.anfrage .breit { grid-column: 1 / -1; }
+.anfrage button.knopf { justify-self: start; font: inherit; font-weight: 600; cursor: pointer; }
+.anfrage-ok { color: var(--gruen); margin: 0; }
+.kontakt-wege { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.software-klein { display: grid; grid-template-columns: 1fr 1.3fr; gap: 28px; align-items: center; }
+.seo-inhalt h2 { margin-top: 1.4em; }
+.seo-inhalt ul { padding-left: 20px; }
+.brotkrumen { font-size: .9rem; color: var(--grau); margin: 0 0 8px; }
+
 /* Arabisch: von rechts nach links */
 [dir="rtl"] body { font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", "Noto Sans Arabic", Arial, sans-serif; line-height: 1.75; }
 [dir="rtl"] .haken li { padding-left: 0; padding-right: 30px; }
@@ -205,9 +244,17 @@ details p { margin: 10px 0 0; color: #3a4655; }
 [dir="rtl"] .preis .haken { text-align: right; }
 [dir="rtl"] .galerie img { object-position: top right; }
 .ltr { direction: ltr; unicode-bidi: embed; display: inline-block; }
+[dir="rtl"] .zeitleiste { padding: 0 22px 0 0; border-left: none; border-right: 3px solid var(--linie); }
+[dir="rtl"] .zeitleiste li::before { left: auto; right: -31px; }
+[dir="rtl"] .seo-inhalt ul { padding-left: 0; padding-right: 20px; }
 
+@media (max-width: 1000px) {
+  .vorteile { grid-template-columns: repeat(3, 1fr); }
+  .schritte { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 900px) {
-  .held-innen, .raster.zwei, .wer, .rechner { grid-template-columns: 1fr; }
+  .held-innen, .raster.zwei, .wer, .rechner, .software-klein { grid-template-columns: 1fr; }
+  .vorteile { grid-template-columns: 1fr 1fr; }
   .raster.drei, .galerie { grid-template-columns: 1fr 1fr; }
   .leiste-innen { grid-template-columns: 1fr 1fr; }
   nav a:not(.knopf):not(.sprachen a) { display: none; }
@@ -217,7 +264,7 @@ details p { margin: 10px 0 0; color: #3a4655; }
   .knopf.klein { white-space: nowrap; font-size: .9rem; }
   nav { gap: 10px; }
   .kopf-innen { gap: 10px; }
-  .raster.drei, .galerie { grid-template-columns: 1fr; }
+  .raster.drei, .galerie, .vorteile, .schritte, .anfrage .felder { grid-template-columns: 1fr; }
   .held { padding-top: 32px; }
 }
 @media (max-width: 360px) {

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://emmoke.github.io/sitemap.xml

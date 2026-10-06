@@ -3,14 +3,16 @@
 <head>
 <meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://api.github.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Emmoke – Bauzeichner &amp; BIM-Konstrukteur in Dessau-Roßlau</title>
-<meta name="description" content="Emmoke – Sewar Khalil, Bauzeichner (IHK) und BIM-Konstrukteur in Dessau-Roßlau: Bestandspläne, Werkpläne, Schal-, Bewehrungs- und Stahlbaupläne, BIM-Modelle in Revit und Tekla, Visualisierung, Gebäudedokumentation – sowie eigene Programme wie Emmoke Finanzplan.">
+<title>Bauzeichner &amp; BIM-Konstrukteur in Dessau-Roßlau – Emmoke</title>
+<meta name="description" content="Emmoke – Sewar Khalil, Bauzeichner (IHK) und BIM-Konstrukteur in Dessau-Roßlau: CAD-Zeichnungen, Schal-, Bewehrungs- und Stahlbaupläne, BIM-Modelle in Revit und Tekla, Bestandspläne und Digitalisierung alter Pläne – für Planungsbüros, Bauunternehmen und Eigentümer.">
+<link rel="canonical" href="https://emmoke.github.io/">
 <link rel="alternate" hreflang="de" href="https://emmoke.github.io/">
 <link rel="alternate" hreflang="en" href="https://emmoke.github.io/en/">
 <link rel="alternate" hreflang="ar" href="https://emmoke.github.io/ar/">
 <link rel="icon" href="bilder/logo.png">
-<link rel="stylesheet" href="stil.css?v=0.16.0.45-202610061752">
-<script src="konfig.js?v=0.16.0.45-202610061752"></script>
+<link rel="stylesheet" href="stil.css?v=0.16.0.45-202610061805">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Emmoke – Bauzeichner & BIM-Konstrukteur","url":"https://emmoke.github.io/","founder":{"@type":"Person","name":"Sewar Khalil","jobTitle":"Bauzeichner (IHK), BIM-Konstrukteur","sameAs":"https://www.linkedin.com/in/sewar-khalil-152012a8/"},"email":"emmoke@outlook.de","telephone":"+49 176 47198998","address":{"@type":"PostalAddress","streetAddress":"Peusstraße 44","postalCode":"06846","addressLocality":"Dessau-Roßlau","addressCountry":"DE"},"areaServed":["Dessau-Roßlau","Sachsen-Anhalt","Deutschland"],"knowsAbout":["Bestandspläne","Aufmaß","Werkplanung","Schalpläne","Bewehrungspläne","Stahlbau","Fertigteile","BIM","Revit","Tekla Structures","IFC"]}</script>
+<script src="konfig.js?v=0.16.0.45-202610061805"></script>
 </head>
 <body>
 <header class="kopf">
@@ -18,11 +20,11 @@
     <a href="./" class="marke"><img src="bilder/logo.png" alt=""> Emmoke</a>
     <nav>
       <a href="#leistungen">Leistungen</a>
-      <a href="#programme">Programme</a>
+      <a href="#ablauf">Ablauf</a>
       <a href="#qualifikation">Qualifikation</a>
-      <a href="#github">GitHub</a>
+      <a href="#software">Software</a>
       <span class="sprachen"><a href="./" class="aktiv" lang="de">DE</a><a href="en/" lang="en">EN</a><a href="ar/" lang="ar">عربي</a></span>
-      <a href="#kontakt" class="knopf klein">Kontakt</a>
+      <a href="#kontakt" class="knopf klein">Projekt anfragen</a>
     </nav>
   </div>
 </header>
@@ -31,138 +33,203 @@
 <section class="held">
   <div class="breite held-innen">
     <div>
-      <p class="etikett">Bauzeichner · BIM-Konstrukteur · Dessau-Roßlau</p>
-      <h1>Emmoke – Zeichnen, Dokumentieren, Programmieren.</h1>
-      <p class="gross">Als <b>ausgebildeter Bauzeichner und BIM-Konstrukteur</b> erstelle ich Pläne und 3D-Modelle – vom Bestandsplan bis zum Bewehrungsplan – und entwickle eigene Programme, die den Alltag mit Job, Nebengewerbe und Haushalt einfacher machen.</p>
+      <p class="etikett">Bauzeichner (IHK) · BIM-Konstrukteur · Dessau-Roßlau</p>
+      <h1>Bauzeichner &amp; BIM-Konstrukteur in Dessau-Roßlau</h1>
+      <p class="gross">CAD-Zeichnungen, BIM-Modelle und Bestandsdigitalisierung für <b>Planungsbüros, Bauunternehmen und Eigentümer</b> – persönlich, projektbezogen und nach Ihren Vorgaben.</p>
       <div class="knoepfe">
-        <a href="#leistungen" class="knopf">Leistungen ansehen</a>
-        <a href="#programme" class="knopf hell">Programme entdecken</a>
+        <a href="#kontakt" class="knopf">Projekt anfragen</a>
+        <a href="#leistungen" class="knopf hell">Leistungen ansehen</a>
       </div>
-      <p class="klein grau">Inhaber: Sewar Khalil · <a href="impressum.html">Impressum</a></p>
+      <p class="klein grau">Sewar Khalil · Erfahrung in Tragwerksplanung, Stahl- und Fertigteilbau · Revit &amp; Tekla · vor Ort in Dessau-Roßlau und Umgebung, deutschlandweit digital</p>
     </div>
-    <img class="held-bild" src="bilder/uebersicht.png" alt="Emmoke Finanzplan – Übersicht mit Beispieldaten">
+    <svg class="held-grafik" viewBox="0 0 600 300" role="img" aria-label="Vom Bestand zum CAD-Plan und BIM-Modell" font-family="Segoe UI, Arial, sans-serif">
+      <rect width="600" height="300" fill="#fff"/>
+      <text x="300" y="32" text-anchor="middle" font-size="17" font-weight="700" fill="#1F3864">Vom Bestand zum Modell</text>
+      <rect x="24" y="50" width="160" height="190" rx="6" fill="#FBF6EA" stroke="#C9B98F" stroke-width="2"/>
+      <path d="M44 80h118v130H44zM100 80v60h62M44 150h40" fill="none" stroke="#8C7B55" stroke-width="2" stroke-dasharray="6 4"/>
+      <path d="M194 145h20m-8-7 8 7-8 7" fill="none" stroke="#2E75B6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="222" y="50" width="160" height="190" rx="6" fill="#F3F7FC" stroke="#2E75B6" stroke-width="2"/>
+      <path d="M242 80h120v130H242z" fill="none" stroke="#1F3864" stroke-width="5"/>
+      <path d="M302 80v60h60M242 150h40" fill="none" stroke="#1F3864" stroke-width="3"/>
+      <path d="M282 150a20 20 0 0 1 20-20" fill="none" stroke="#2E75B6" stroke-width="1.5"/>
+      <path d="M242 226h120M242 221v10M362 221v10" fill="none" stroke="#2E75B6" stroke-width="1.5"/>
+      <path d="M392 145h20m-8-7 8 7-8 7" fill="none" stroke="#2E75B6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="420" y="50" width="160" height="190" rx="6" fill="#F3F7FC" stroke="#2E75B6" stroke-width="2"/>
+      <path d="M440 120l60-30 60 30-60 30z" fill="#DCE7F5" stroke="#1F3864" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M440 120l60 30v65l-60-30z" fill="#9DB8DC" stroke="#1F3864" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M500 150l60-30v65l-60 30z" fill="#6F93C4" stroke="#1F3864" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M440 152l60 30 60-30" fill="none" stroke="#1F3864" stroke-width="1.5"/>
+      <text x="104" y="272" text-anchor="middle" font-size="15" fill="#1F3864">Bestand / Aufmaß</text>
+      <text x="302" y="272" text-anchor="middle" font-size="15" fill="#1F3864">CAD-Plan</text>
+      <text x="500" y="272" text-anchor="middle" font-size="15" fill="#1F3864">BIM-Modell</text>
+    </svg>
   </div>
 </section>
 
 <section id="leistungen" class="abschnitt">
   <div class="breite">
-    <h2>Leistungen</h2>
-    <p class="einleitung">Zeichnungen, Modelle und Dokumentation nach Ihren Vorgaben – für Bauherren, Eigentümer und Hausverwaltungen sowie als Zuarbeit für Architektur- und Ingenieurbüros. Termine vor Ort nach Absprache.</p>
+    <h2>Was ich für Sie übernehmen kann</h2>
+    <p class="einleitung">Drei Kundengruppen, drei Schwerpunkte – wählen Sie, was zu Ihnen passt.</p>
     <div class="raster drei">
-      <article class="karte">
-        <svg class="karte-symbol" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 34h36M6 30v8M42 30v8" fill="none" stroke="#1F3864" stroke-width="2.5" stroke-linecap="round"/><path d="M10 26V10h28v16" fill="none" stroke="#2E75B6" stroke-width="2.5"/><path d="M18 18h12" stroke="#2E75B6" stroke-width="2.5" stroke-linecap="round"/></svg>
-        <h3>Bestandspläne &amp; Aufmaß</h3>
-        <p>Aufnahme vorhandener Gebäude und Zeichnung als Grundrisse, Schnitte und Ansichten – zum Beispiel für Umbau, Verkauf, Vermietung oder Versicherung.</p>
-      </article>
-      <article class="karte">
-        <svg class="karte-symbol" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="8" width="36" height="28" rx="3" fill="none" stroke="#1F3864" stroke-width="2.5"/><path d="M12 30V14h10v8h14v8" fill="none" stroke="#2E75B6" stroke-width="2.5"/><path d="M18 40h12" stroke="#1F3864" stroke-width="2.5" stroke-linecap="round"/></svg>
-        <h3>Werk- und Ausführungspläne</h3>
-        <p>Grundrisse, Schnitte, Ansichten und Details nach Vorgaben von Architektur- und Ingenieurbüros.</p>
-      </article>
-      <article class="karte">
+      <article class="karte zielgruppe">
         <svg class="karte-symbol" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10h32M8 38h32M24 10v28" fill="none" stroke="#1F3864" stroke-width="3" stroke-linecap="round"/><path d="M12 18h6M12 24h6M12 30h6M30 18h6M30 24h6M30 30h6" fill="none" stroke="#2E75B6" stroke-width="2.5" stroke-linecap="round"/></svg>
-        <h3>Schal-, Bewehrungs-, Stahlbau- und Fertigteilpläne</h3>
-        <p>Konstruktionspläne nach den Vorgaben der Tragwerksplanung (Statik) – mit SOFiCAD, Tekla Structures und Revit.</p>
+        <h3>Für Architektur- &amp; Ingenieurbüros</h3>
+        <p class="frage">Mehr CAD-/BIM-Arbeit als Kapazität? Ich unterstütze projektbezogen.</p>
+        <ul class="haken klein">
+          <li>Werk- und Ausführungspläne</li>
+          <li>Schal- und Bewehrungspläne nach Vorgaben der Statik</li>
+          <li>Stahlbau- und Fertigteilpläne</li>
+          <li>BIM-Modelle in Revit und Tekla Structures, Austausch per IFC</li>
+        </ul>
+        <a href="cad-zeichnungen/" class="knopf hell">Mehr zu CAD &amp; Konstruktion</a>
       </article>
-      <article class="karte">
+      <article class="karte zielgruppe">
+        <svg class="karte-symbol" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 34h36M6 30v8M42 30v8" fill="none" stroke="#1F3864" stroke-width="2.5" stroke-linecap="round"/><path d="M10 26V10h28v16" fill="none" stroke="#2E75B6" stroke-width="2.5"/><path d="M18 18h12" stroke="#2E75B6" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <h3>Für Eigentümer &amp; Hausverwaltungen</h3>
+        <p class="frage">Alte Pläne oder gar keine? Ich mache daraus saubere digitale Bestandspläne.</p>
+        <ul class="haken klein">
+          <li>Aufmaß vor Ort in Dessau-Roßlau und Umgebung</li>
+          <li>Grundrisse, Schnitte, Ansichten</li>
+          <li>Alte Papier- und Scanpläne digitalisieren (PDF, DWG)</li>
+          <li>Flächenberechnung und digitale Gebäudedokumentation</li>
+        </ul>
+        <a href="bestandsplaene/" class="knopf hell">Mehr zu Bestandsplänen</a>
+      </article>
+      <article class="karte zielgruppe">
         <svg class="karte-symbol" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6l16 9v18l-16 9-16-9V15z" fill="none" stroke="#1F3864" stroke-width="2.5"/><path d="M8 15l16 9 16-9M24 24v18" fill="none" stroke="#2E75B6" stroke-width="2.5"/></svg>
-        <h3>BIM-Modelle</h3>
-        <p>3D-Gebäudemodelle mit Bauteilinformationen in Revit und Tekla Structures – Austausch zum Beispiel per IFC.</p>
-      </article>
-      <article class="karte">
-        <svg class="karte-symbol" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 14V8h6M34 8h6v6M40 34v6h-6M14 40H8v-6" fill="none" stroke="#1F3864" stroke-width="2.5" stroke-linecap="round"/><path d="M14 24h20M18 18h12M18 30h12" fill="none" stroke="#2E75B6" stroke-width="2.5" stroke-linecap="round"/></svg>
-        <h3>Digitalisierung von Bestand</h3>
-        <p>Alte Papier- und Scanpläne in CAD übertragen, bestehende Hallen und Gebäude als Modell aufbauen.</p>
-      </article>
-      <article class="karte">
-        <svg class="karte-symbol" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="12" width="28" height="24" rx="3" fill="none" stroke="#1F3864" stroke-width="2.5"/><path d="M34 20l8-5v18l-8-5" fill="none" stroke="#2E75B6" stroke-width="2.5" stroke-linejoin="round"/></svg>
-        <h3>Visualisierung &amp; Animation</h3>
-        <p>Bilder und Videos von 3D-Modellen und Bauabläufen mit Twinmotion – für Präsentation und Abstimmung.</p>
-      </article>
-      <article class="karte">
-        <svg class="karte-symbol" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40L40 8M14 40h26V14" fill="none" stroke="#1F3864" stroke-width="2.5" stroke-linecap="round"/><circle cx="16" cy="16" r="7" fill="none" stroke="#2E75B6" stroke-width="2.5"/></svg>
-        <h3>Flächen- und Mengenermittlung</h3>
-        <p>Flächen, Rauminhalte und Mengen aus Plänen, Modellen oder Aufmaß – nachvollziehbar aufbereitet.</p>
-      </article>
-      <article class="karte">
-        <svg class="karte-symbol" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 6h18l8 8v28H12z" fill="none" stroke="#1F3864" stroke-width="2.5"/><path d="M30 6v8h8M17 24h14M17 30h14M17 36h9" fill="none" stroke="#2E75B6" stroke-width="2.5" stroke-linecap="round"/></svg>
-        <h3>Digitale Gebäudedokumentation</h3>
-        <p>Bestandsunterlagen digitalisieren, ordnen und aktuell halten – Pläne, Flächen und Unterlagen an einem Ort.</p>
+        <h3>Für Bauunternehmen &amp; Gewerbe</h3>
+        <p class="frage">Konstruktion und Dokumentation, die auf der Baustelle funktioniert.</p>
+        <ul class="haken klein">
+          <li>Konstruktions- und Detailzeichnungen</li>
+          <li>3D-Modelle von Hallen, Stahl- und Fertigteilbauten</li>
+          <li>Mengen- und Flächenermittlung</li>
+          <li>Visualisierung und Animation mit Twinmotion</li>
+        </ul>
+        <a href="bim-konstrukteur/" class="knopf hell">Mehr zu BIM mit Revit &amp; Tekla</a>
       </article>
     </div>
-    <p class="klein grau leistung-hinweis">Hinweis: Bauzeichner ist ein anerkannter Ausbildungsberuf. Die Tragwerksplanung (Statik) und Bauanträge als Entwurfsverfasser bleiben Ingenieuren und Architekten vorbehalten – ich erstelle die Zeichnungen und Modelle in Zusammenarbeit mit ihnen bzw. nach ihren Vorgaben.</p>
-    <div class="knoepfe"><a href="#kontakt" class="knopf">Anfrage per E-Mail</a></div>
+    <p class="klein grau leistung-hinweis"><b>Hinweis:</b> Emmoke übernimmt zeichnerische und konstruktive CAD-/BIM-Leistungen nach vorhandenen Vorgaben. Statische Berechnungen, Genehmigungsplanung und die Tätigkeit als Entwurfsverfasser werden nicht angeboten und bleiben den jeweils dafür qualifizierten und verantwortlichen Planern vorbehalten.</p>
+  </div>
+</section>
+
+<section id="warum" class="abschnitt hell-hg">
+  <div class="breite">
+    <h2>Warum Emmoke?</h2>
+    <p class="einleitung">Ich verstehe, wie Baukonstruktionen funktionieren – und setze sie technisch sauber als 2D-Plan oder BIM-Modell um.</p>
+    <ul class="vorteile">
+      <li><b>Ausgebildeter Bauzeichner</b><span>IHK-Abschluss 2022, praktische Prüfung „sehr gut“</span></li>
+      <li><b>Praxis in der Tragwerksplanung</b><span>Schal-, Bewehrungs- und Stahlbaupläne im Ingenieurbüro</span></li>
+      <li><b>Revit &amp; Tekla</b><span>BIM-Modelle mit Bauteilinformationen, IFC-Austausch</span></li>
+      <li><b>Persönlicher Ansprechpartner</b><span>Kurze Wege, auch für kleine Aufträge</span></li>
+      <li><b>Dessau-Roßlau + remote</b><span>Aufmaß vor Ort in der Region, Zeichenarbeit deutschlandweit</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="ablauf" class="abschnitt">
+  <div class="breite">
+    <h2>So läuft ein Auftrag ab</h2>
+    <ol class="schritte">
+      <li><b>Anfrage</b><span>Sie beschreiben kurz Objekt, gewünschte Pläne und vorhandene Unterlagen.</span></li>
+      <li><b>Sichtung &amp; Angebot</b><span>Ich prüfe die Unterlagen und schicke ein individuelles Angebot mit Termin.</span></li>
+      <li><b>Zeichnen &amp; Modellieren</b><span>Umsetzung nach Ihren Vorgaben, mit Abstimmung bei offenen Fragen.</span></li>
+      <li><b>Übergabe</b><span>Pläne als PDF und DWG, Modelle als Revit-Datei oder IFC – je nach Absprache.</span></li>
+    </ol>
+    <div class="raster zwei unten-hinweis">
+      <div class="karte">
+        <h3>Preise</h3>
+        <p>Individuelles Angebot nach Unterlagen und Umfang. Abrechnung projektbezogen oder nach vereinbartem Stunden- bzw. Tagessatz. Als Kleinunternehmer (§ 19 UStG) berechne ich keine Umsatzsteuer.</p>
+      </div>
+      <div class="karte">
+        <h3>Arbeitsproben</h3>
+        <p>Pläne aus meiner Angestelltenzeit gehören den jeweiligen Bauherren und Büros und werden deshalb nicht veröffentlicht. Arbeitsproben zeige ich gern im persönlichen Gespräch; eigene Beispiele (Vorher → Nachher) folgen hier.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="qualifikation" class="abschnitt hell-hg">
   <div class="breite">
     <h2>Qualifikation &amp; Erfahrung</h2>
-    <p class="einleitung">Ausgebildeter Bauzeichner und BIM-Konstrukteur mit mehrjähriger Berufserfahrung in Tragwerksplanung, Stahl- und Betonfertigteilbau sowie Sanierung.</p>
     <div class="raster zwei quali">
-      <div class="karte"><h3>Abschluss</h3><p><b>Bauzeichner (IHK)</b>, Schwerpunkt Architektur – 2022<br><span class="klein grau">Praktische Prüfung: sehr gut · Gesamt: gut</span></p><h3>Sprachen</h3><p>Deutsch (gut, B2) · Arabisch und Kurdisch (Muttersprache)<br><span class="klein grau">Absprachen auch auf Arabisch oder Kurdisch möglich.</span></p></div>
-      <div class="karte"><h3>Software</h3><p class="chips"><span>Revit / BIM</span><span>Tekla Structures</span><span>AutoCAD</span><span>SOFiCAD</span><span>Twinmotion</span><span>QGIS</span><span>Python / Revit-Automatisierung</span></p></div>
-      <div class="karte quali-breit"><h3>Berufserfahrung</h3><ul class="haken klein"><li><b>2022–2026</b> Bauzeichner / Konstrukteur in der Tragwerksplanung (Ingenieurbüro): Schal- und Stahlbaupläne, Bewehrungsplanung, 3D-Modelle, Bestandsmodelle, Visualisierungen</li><li><b>2019–2020</b> Bauzeichner im Betonfertigteilbau: Fertigteil- und Konstruktionszeichnungen, 3D-Modelle</li><li><b>2018–2019</b> Sanierung und Innenausbau mit Baudokumentation vor Ort</li><li><b>davor</b> mehrere Jahre Bauleitung im Abdichtungsbau: Baustellenorganisation, Termine, Qualität, Gewerkekoordination</li></ul></div>
-    </div>
-    <div class="knoepfe"><a href="https://www.linkedin.com/in/sewar-khalil-152012a8/" class="knopf hell" rel="noopener">LinkedIn-Profil ansehen</a></div>
-  </div>
-</section>
-
-<section id="programme" class="abschnitt">
-  <div class="breite">
-    <h2>Programme</h2>
-    <p class="einleitung">Eigene Software von Emmoke – jedes Programm hat seine eigene Seite mit Beschreibung, Anleitung und Download.</p>
-    <div class="raster zwei programme">
-      <article class="karte programm">
-        <img src="bilder/uebersicht.png" alt="Emmoke Finanzplan">
-        <div>
-          <p class="etikett">Kostenlose Testversion · Windows und Android</p>
-          <h3>Emmoke Finanzplan</h3>
-          <p>Die Finanzzentrale für Menschen mit Job und Nebengewerbe: Rechnungen, EÜR, Steuerplanung, Nebenkosten, Verträge und Kalender in einem Programm.</p>
-          <div class="knoepfe"><a href="finanzplan/" class="knopf">Zur Programmseite</a><a href="finanzplan/#download" class="knopf hell">Herunterladen</a></div>
-        </div>
-      </article>
-      <article class="karte programm programm-leer">
-        <div>
-          <h3>Weitere Programme</h3>
-          <p>Weitere Programme sind in Vorbereitung. Sie erscheinen hier mit eigener Seite, sobald sie getestet werden können.</p>
-          <p class="klein grau">Wünsche und Ideen? Schreiben Sie gern: <a href="mailto:emmoke@outlook.de">emmoke@outlook.de</a></p>
-        </div>
-      </article>
+      <div class="karte">
+        <h3>Werdegang</h3>
+        <ol class="zeitleiste">
+          <li><b>davor</b><span>Mehrere Jahre Bauleitung im Abdichtungsbau: Baustellenorganisation, Termine, Qualität, Gewerkekoordination</span></li>
+          <li><b>2018–2019</b><span>Sanierung und Innenausbau mit Baudokumentation vor Ort</span></li>
+          <li><b>2019–2020</b><span>Bauzeichner im Betonfertigteilbau: Fertigteil- und Konstruktionszeichnungen, 3D-Modelle</span></li>
+          <li class="wichtig"><b>2022</b><span>Abschluss <b>Bauzeichner (IHK)</b>, Schwerpunkt Architektur – praktische Prüfung „sehr gut“, gesamt „gut“</span></li>
+          <li><b>2022–2026</b><span>Bauzeichner / Konstrukteur in der Tragwerksplanung (Ingenieurbüro): Schal- und Stahlbaupläne, Bewehrung, 3D- und Bestandsmodelle, Visualisierung</span></li>
+          <li class="wichtig"><b>2026</b><span>Gründung von Emmoke in Dessau-Roßlau</span></li>
+        </ol>
+      </div>
+      <div class="karte">
+        <h3>Software</h3>
+        <p class="chips"><span>Revit / BIM</span><span>Tekla Structures</span><span>AutoCAD</span><span>SOFiCAD</span><span>Twinmotion</span><span>QGIS</span><span>Python / Revit-Automatisierung</span></p>
+        <h3>Sprachen</h3>
+        <p>Deutsch: gute berufliche Kommunikation, Fachsprache aus dem Berufsalltag<br>Arabisch und Kurdisch: Muttersprache</p>
+        <div class="knoepfe"><a href="https://www.linkedin.com/in/sewar-khalil-152012a8/" class="knopf hell" rel="noopener">LinkedIn-Profil ansehen</a></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="ueber" class="abschnitt hell-hg">
-  <div class="breite wer">
-    <img src="bilder/logo.png" alt="Emmoke Logo" class="wer-logo">
+<section id="software" class="abschnitt">
+  <div class="breite software-klein">
+    <img src="bilder/uebersicht.png" alt="Emmoke Finanzplan – Übersicht mit Beispieldaten" class="schatten">
     <div>
-      <h2>Über Emmoke</h2>
-      <p>Emmoke ist das Einzelunternehmen von <b>Sewar Khalil</b>, <b>ausgebildeter Bauzeichner und BIM-Konstrukteur</b>, in Dessau-Roßlau – gegründet 2026 als Kleingewerbe (Kleinunternehmer nach § 19 UStG). Der Schwerpunkt liegt auf Plänen, BIM-Modellen und digitaler Gebäudedokumentation. Daneben entstehen eigene Programme – das erste, Emmoke Finanzplan, ist aus einer eigenen Excel-Planung für Job, Gewerbe und Haushalt gewachsen.</p>
-      <p>Grundsätze: verständliche Lösungen, Daten bleiben bei den Nutzern, keine Werbung und keine versteckten Kosten.</p>
-    </div>
-  </div>
-</section>
-
-<section id="github" class="abschnitt">
-  <div class="breite schmal">
-    <h2>GitHub</h2>
-    <p class="einleitung">Auf GitHub liegen die öffentlichen Dateien von Emmoke: diese Webseite, alle Downloads mit Prüfsummen und das Änderungsprotokoll jeder Version.
-      Der Quellcode der Programme selbst ist nicht öffentlich.</p>
-    <div class="raster zwei">
-      <a class="karte link-karte" href="https://github.com/Emmoke"><h3>Profil Emmoke</h3><p>github.com/Emmoke</p></a>
-      <a class="karte link-karte" href="https://github.com/Emmoke/emmoke.github.io/releases"><h3>Downloads &amp; Änderungen</h3><p>Alle Versionen mit SHA-256-Prüfsummen</p></a>
+      <h2>Auch digital unterwegs</h2>
+      <p>Neben der Arbeit im Bauwesen entwickle ich eigene Software – vom Revit-Skript bis zum eigenen Programm. Das erste ist <b>Emmoke Finanzplan</b>: Rechnungen, EÜR, Steuerplanung und Haushalt für Menschen mit Job und Nebengewerbe, als kostenlose Testversion für Windows und Android.</p>
+      <div class="knoepfe"><a href="finanzplan/" class="knopf hell">Zu Emmoke Finanzplan</a></div>
+      <p class="klein grau">Downloads und Änderungen liegen öffentlich auf <a href="https://github.com/Emmoke">GitHub</a> (<a href="https://github.com/Emmoke/emmoke.github.io/releases">alle Versionen mit SHA-256-Prüfsummen</a>).</p>
     </div>
   </div>
 </section>
 
 <section id="kontakt" class="abschnitt hell-hg">
   <div class="breite schmal">
-    <h2>Kontakt</h2>
-    <div class="karte">
-      <p><b>Emmoke</b> – Inhaber Sewar Khalil<br>Peusstraße 44, 06846 Dessau-Roßlau, Deutschland</p>
-      <p>E-Mail: <a href="mailto:emmoke@outlook.de">emmoke@outlook.de</a> · <a href="https://www.linkedin.com/in/sewar-khalil-152012a8/" rel="noopener">LinkedIn</a></p>
-      <p class="klein grau">Für Anfragen beschreiben Sie bitte kurz Objekt, gewünschte Pläne (z. B. Grundrisse, Schnitte), vorhandene Unterlagen und Ihren Termin. Unterlagen bitte erst nach Absprache senden.</p>
+    <h2>Projekt anfragen</h2>
+    <p class="einleitung">Kreuzen Sie kurz an, was Sie brauchen – daraus entsteht eine fertige E-Mail an mich.</p>
+    <form id="anfrage" class="karte anfrage" data-an="emmoke@outlook.de" data-betreff="Projektanfrage über emmoke.github.io"
+          data-l-leistung="Benötigt" data-l-unterlagen="Vorhandene Unterlagen" data-l-ort="Projektstandort" data-l-termin="Wunschtermin" data-l-nachricht="Nachricht">
+      <fieldset>
+        <legend>1. Was benötigen Sie?</legend>
+        <div class="wahl">
+          <label><input type="checkbox" name="leistung"> Bestandsplan</label>
+          <label><input type="checkbox" name="leistung"> Aufmaß</label>
+          <label><input type="checkbox" name="leistung"> Werkplanung</label>
+          <label><input type="checkbox" name="leistung"> Schal-/Bewehrungsplanung</label>
+          <label><input type="checkbox" name="leistung"> Stahlbau</label>
+          <label><input type="checkbox" name="leistung"> Fertigteile</label>
+          <label><input type="checkbox" name="leistung"> BIM-Modell</label>
+          <label><input type="checkbox" name="leistung"> Digitalisierung</label>
+          <label><input type="checkbox" name="leistung"> Visualisierung</label>
+          <label><input type="checkbox" name="leistung"> Sonstiges</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>2. Welche Unterlagen sind vorhanden?</legend>
+        <div class="wahl">
+          <label><input type="checkbox" name="unterlagen"> PDF</label>
+          <label><input type="checkbox" name="unterlagen"> Papierplan</label>
+          <label><input type="checkbox" name="unterlagen"> DWG/DXF</label>
+          <label><input type="checkbox" name="unterlagen"> Revit/IFC</label>
+          <label><input type="checkbox" name="unterlagen"> Fotos</label>
+          <label><input type="checkbox" name="unterlagen"> keine</label>
+        </div>
+      </fieldset>
+      <div class="felder">
+        <label class="feld">3. Projektstandort<input type="text" id="a-ort" placeholder="z. B. Dessau-Roßlau"></label>
+        <label class="feld">4. Wunschtermin<input type="text" id="a-termin" placeholder="z. B. bis Ende November"></label>
+        <label class="feld breit">5. Nachricht<textarea id="a-nachricht" rows="4" placeholder="Kurz: Objekt, Umfang, Besonderheiten"></textarea></label>
+      </div>
+      <button type="submit" class="knopf">E-Mail vorbereiten</button>
+      <p id="anfrage-ok" class="anfrage-ok" hidden>Ihr E-Mail-Programm öffnet sich mit der fertigen Anfrage – bitte dort absenden.</p>
+      <p class="klein grau">Unterlagen bitte erst nach Absprache senden. Das Formular überträgt nichts an diese Webseite; es öffnet nur Ihr E-Mail-Programm (siehe <a href="datenschutz.html">Datenschutz</a>).</p>
+    </form>
+    <div class="karte unten-hinweis">
+      <p><b>Emmoke</b> – Inhaber Sewar Khalil, Bauzeichner (IHK)<br>Peusstraße 44, 06846 Dessau-Roßlau · Kleinunternehmer nach § 19 UStG</p>
+      <p class="kontakt-wege"><a href="mailto:emmoke@outlook.de">emmoke@outlook.de</a><a href="tel:+4917647198998">+49 176 47198998</a><a href="https://www.linkedin.com/in/sewar-khalil-152012a8/" rel="noopener">LinkedIn</a></p>
     </div>
   </div>
 </section>
@@ -170,10 +237,11 @@
 
 <footer class="fuss">
   <div class="breite fuss-innen">
-    <span>© 2026 Emmoke · Sewar Khalil</span>
+    <span>© 2026 Emmoke · Sewar Khalil · <a href="bauzeichner-dessau/">Bauzeichner in Dessau-Roßlau</a></span>
     <span><a href="finanzplan/">Emmoke Finanzplan</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a> · <a href="lizenzen.html">Lizenzen Dritter</a></span>
   </div>
 </footer>
-<script src="seite.js?v=0.16.0.45-202610061752"></script>
+<script src="seite.js?v=0.16.0.45-202610061805"></script>
+<script src="anfrage.js?v=0.16.0.45-202610061805"></script>
 </body>
 </html>
