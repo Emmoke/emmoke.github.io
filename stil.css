@@ -265,6 +265,16 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .haupt-links { display: flex; gap: 20px; }
 .menue-knopf { display: none; width: 44px; height: 44px; place-items: center; background: #fff; border: 1px solid var(--linie); border-radius: 10px; font-size: 1.35rem; color: var(--navy); cursor: pointer; }
 .cta-leiste { display: none; }
+.cta-leiste .knopf { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.cta-leiste .knopf.hell { flex: none; }
+.cta-leiste .knopf:not(.hell) { flex: 1; }
+.cta-leiste svg { width: 20px; height: 20px; }
+.tel-knopf { display: inline-grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--linie); border-radius: 10px; background: #fff; color: var(--gruen); }
+.tel-knopf svg { width: 22px; height: 22px; }
+.tel-knopf:hover { border-color: var(--gruen); }
+.abzeichen { list-style: none; padding: 0; margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.abzeichen li { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; background: #fff; border: 1px solid var(--linie); border-radius: 999px; font-size: .9rem; font-weight: 600; color: var(--navy); }
+.abzeichen svg { width: 20px; height: 20px; flex: none; color: var(--akzent); }
 .kontakt-wege { display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .software-klein { display: grid; grid-template-columns: 1fr 1.3fr; gap: 28px; align-items: center; }
 .seo-inhalt h2 { margin-top: 1.4em; }
@@ -306,7 +316,8 @@ details p { margin: 10px 0 0; color: #3a4655; }
   .haupt-links { display: none; }
   .kopf.offen .haupt-links { display: flex; flex-direction: column; gap: 0; position: absolute; top: 64px; left: 0; right: 0; padding: 6px 16px 14px; background: #fff; border-bottom: 1px solid var(--linie); box-shadow: var(--schatten); }
   .kopf.offen .haupt-links a { display: block; padding: 12px 0; border-bottom: 1px solid var(--linie); font-weight: 600; }
-  .cta-leiste { display: block; position: fixed; left: 16px; right: 16px; bottom: 12px; z-index: 20; text-align: center; box-shadow: 0 8px 24px rgba(31, 56, 100, .3); transition: opacity .2s, transform .2s; }
+  .cta-leiste { display: flex; gap: 8px; position: fixed; left: 16px; right: 16px; bottom: 12px; z-index: 20; transition: opacity .2s, transform .2s; }
+  .cta-leiste .knopf { box-shadow: 0 8px 24px rgba(31, 56, 100, .3); padding: 12px 14px; }
   .cta-leiste.weg { opacity: 0; transform: translateY(20px); pointer-events: none; }
   .fuss { padding-bottom: 84px; }
 }
