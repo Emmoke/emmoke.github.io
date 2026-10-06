@@ -311,7 +311,7 @@ details p { margin: 10px 0 0; color: #3a4655; }
   .vorteile { grid-template-columns: 1fr 1fr; }
   .raster.drei, .galerie { grid-template-columns: 1fr 1fr; }
   .leiste-innen { grid-template-columns: 1fr 1fr; }
-  nav a:not(.knopf):not(.sprachen a) { display: none; }
+  nav a:not(.knopf):not(.sprachen a):not(.tel-knopf) { display: none; }
   .menue-knopf { display: inline-grid; }
   .haupt-links { display: none; }
   .kopf.offen .haupt-links { display: flex; flex-direction: column; gap: 0; position: absolute; top: 64px; left: 0; right: 0; padding: 6px 16px 14px; background: #fff; border-bottom: 1px solid var(--linie); box-shadow: var(--schatten); }
