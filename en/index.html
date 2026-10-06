@@ -74,6 +74,30 @@
   </div>
 </section>
 
+<section id="beispiel" class="abschnitt rechner-hg">
+  <div class="breite">
+    <h2>Example: €600 on the side – what is left?</h2>
+    <p class="einleitung">Enter your figures. The calculation uses the same logic as the net calculator in the program.</p>
+    <form id="rechner" class="rechner" autocomplete="off">
+      <div class="karte rechner-eingabe">
+        <label>Turnover per month (€)<input type="number" name="umsatz" value="600" min="0" max="5000" step="10" inputmode="decimal"></label>
+        <label>Costs per month (€)<input type="number" name="kosten" value="100" min="0" max="5000" step="10" inputmode="decimal"></label>
+        <label>Gross salary from your job<select name="brutto"><option value="2000">2.000 €</option><option value="2500">2.500 €</option><option value="3000" selected>3.000 €</option><option value="3500">3.500 €</option><option value="4000">4.000 €</option><option value="5000">5.000 €</option></select></label>
+        <label>Family<select name="profil"><option value="ledig" selected>single (tax class I)</option><option value="iv">married, both earn the same (IV)</option><option value="iii">married, partner without income (III)</option></select></label>
+      </div>
+      <div class="karte rechner-ergebnis">
+        <div class="zeile"><span>Profit per month</span><b data-aus="gewinn"></b></div>
+        <div class="zeile"><span>additional income tax</span><b data-aus="steuer"></b></div>
+        <div class="zeile"><span>trade tax, health insurance, chamber</span><b data-aus="abgaben"></b></div>
+        <div class="zeile summe"><span>left for you per month</span><b data-aus="bleibt"></b></div>
+        <div class="balken-rechner"><span class="balken-bleibt"></span><span class="balken-ruecklage"></span></div>
+        <p class="klein" data-aus="quote"></p>
+        <p class="klein grau" data-aus="grenze" hidden>The example goes up to €2,000 profit per month – above that, please use the program.</p>
+      </div>
+    </form>
+    <p class="klein grau rechner-hinweis"><b>Example calculation – not tax advice.</b> German tax year 2026, no children, no church tax, side business next to employment (statutory health insurance via the job), values between €50 steps interpolated. The program calculates your exact case with your own data. Your input stays in your browser.</p>
+  </div>
+</section>
 <section id="bilder" class="abschnitt hell-hg">
   <div class="breite">
     <h2>What Emmoke looks like</h2>
@@ -126,6 +150,8 @@
 <section id="sicherheit" class="abschnitt">
   <div class="breite schmal">
     <h2>How your data is protected</h2>
+    <p><b>🔒 Your data is stored encrypted.</b> Your financial data is protected with modern AES-256-GCM encryption. The password is not stored. Backups and cloud sync also only use the encrypted file.</p>
+    <details><summary>Technical details</summary>
     <ul class="haken">
       <li><b>AES-256-GCM:</b> all data is stored in one encrypted file. GCM also detects if the file has been tampered with.</li>
       <li><b>Your password is never stored.</b> The key is derived from it with PBKDF2-SHA512 (600,000 iterations) – which makes guessing very expensive.</li>
@@ -133,6 +159,7 @@
       <li><b>Backups and cloud sync</b> use the same encrypted file. OneDrive, Google Drive or iCloud only see encrypted data.</li>
       <li><b>Your responsibility:</b> PDF invoices, Excel or CSV exports that you save or send are normal files – keep them carefully.</li>
     </ul>
+    </details>
   </div>
 </section>
 <section id="test" class="abschnitt hell-hg">
@@ -208,6 +235,6 @@
     The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License.
     In case of doubt, the German version of the legal texts is binding.</p></div>
 </footer>
-<script src="../seite.js"></script>
+<script src="../rechner-daten.js"></script><script src="../rechner.js"></script><script src="../seite.js"></script>
 </body>
 </html>

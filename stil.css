@@ -102,6 +102,22 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .wer { display: grid; grid-template-columns: 1fr 2fr; gap: 28px; align-items: center; }
 .galerie figure.beleg img { object-position: top center; }
 
+/* Beispielrechnung „was bleibt?“ */
+.rechner-hg { background: #EEF5EF; }
+.rechner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 20px; align-items: start; }
+.rechner-eingabe { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.rechner label { display: flex; flex-direction: column; gap: 6px; font-size: .92rem; color: var(--grau); }
+.rechner input, .rechner select { font: inherit; font-size: 1.05rem; color: var(--text); padding: 9px 11px; border: 1px solid var(--linie); border-radius: 9px; background: #fff; min-width: 0; width: 100%; }
+.rechner-eingabe label { justify-content: flex-end; }
+.rechner input:focus, .rechner select:focus { outline: 2px solid var(--akzent); outline-offset: 1px; }
+.rechner-ergebnis .zeile { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid var(--linie); }
+.rechner-ergebnis .summe { border-bottom: none; font-size: 1.25rem; color: var(--gruen); }
+.balken-rechner { display: flex; height: 14px; border-radius: 7px; overflow: hidden; background: var(--linie); margin: 10px 0; }
+.balken-bleibt { background: var(--gruen); transition: width .3s; }
+.balken-ruecklage { background: #E6A23C; transition: width .3s; }
+.rechner-hinweis { margin-top: 14px; max-width: 900px; }
+#sicherheit details { margin-top: 12px; }
+
 /* Arabisch: von rechts nach links */
 [dir="rtl"] body { font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", "Noto Sans Arabic", Arial, sans-serif; line-height: 1.75; }
 [dir="rtl"] .haken li { padding-left: 0; padding-right: 30px; }
@@ -114,7 +130,7 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .ltr { direction: ltr; unicode-bidi: embed; display: inline-block; }
 
 @media (max-width: 900px) {
-  .held-innen, .raster.zwei, .wer { grid-template-columns: 1fr; }
+  .held-innen, .raster.zwei, .wer, .rechner { grid-template-columns: 1fr; }
   .raster.drei, .galerie { grid-template-columns: 1fr 1fr; }
   .leiste-innen { grid-template-columns: 1fr 1fr; }
   nav a:not(.knopf):not(.sprachen a) { display: none; }
@@ -126,6 +142,9 @@ details p { margin: 10px 0 0; color: #3a4655; }
   .kopf-innen { gap: 10px; }
   .raster.drei, .galerie { grid-template-columns: 1fr; }
   .held { padding-top: 32px; }
+}
+@media (max-width: 360px) {
+  .marke { font-size: 0; gap: 0; }   /* sehr schmal: nur das Logo, damit die Sprachwahl Platz hat */
 }
 @media (max-width: 440px) {
   nav .knopf.klein { display: none; }   /* am schmalen Handy: Logo + Sprachwahl; „Testen“ steht gleich darunter */

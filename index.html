@@ -74,6 +74,30 @@
   </div>
 </section>
 
+<section id="beispiel" class="abschnitt rechner-hg">
+  <div class="breite">
+    <h2>Beispiel: 600 € nebenbei – was bleibt?</h2>
+    <p class="einleitung">Tragen Sie Ihre Zahlen ein. Gerechnet wird mit derselben Logik wie im Netto-Rechner des Programms.</p>
+    <form id="rechner" class="rechner" autocomplete="off">
+      <div class="karte rechner-eingabe">
+        <label>Umsatz im Monat (€)<input type="number" name="umsatz" value="600" min="0" max="5000" step="10" inputmode="decimal"></label>
+        <label>Kosten im Monat (€)<input type="number" name="kosten" value="100" min="0" max="5000" step="10" inputmode="decimal"></label>
+        <label>Bruttogehalt im Job<select name="brutto"><option value="2000">2.000 €</option><option value="2500">2.500 €</option><option value="3000" selected>3.000 €</option><option value="3500">3.500 €</option><option value="4000">4.000 €</option><option value="5000">5.000 €</option></select></label>
+        <label>Familie<select name="profil"><option value="ledig" selected>ledig (Steuerklasse I)</option><option value="iv">verheiratet, beide verdienen gleich (IV)</option><option value="iii">verheiratet, Partner ohne Einkommen (III)</option></select></label>
+      </div>
+      <div class="karte rechner-ergebnis">
+        <div class="zeile"><span>Gewinn im Monat</span><b data-aus="gewinn"></b></div>
+        <div class="zeile"><span>zusätzliche Einkommensteuer</span><b data-aus="steuer"></b></div>
+        <div class="zeile"><span>Gewerbesteuer, Krankenversicherung, Kammer</span><b data-aus="abgaben"></b></div>
+        <div class="zeile summe"><span>bleibt Ihnen im Monat</span><b data-aus="bleibt"></b></div>
+        <div class="balken-rechner"><span class="balken-bleibt"></span><span class="balken-ruecklage"></span></div>
+        <p class="klein" data-aus="quote"></p>
+        <p class="klein grau" data-aus="grenze" hidden>Die Beispielrechnung reicht bis 2.000 € Gewinn im Monat – darüber bitte im Programm rechnen.</p>
+      </div>
+    </form>
+    <p class="klein grau rechner-hinweis"><b>Beispielrechnung – keine Steuerberatung.</b> Steuerjahr 2026, ohne Kinder, ohne Kirchensteuer, Gewerbe im Nebenberuf (gesetzlich krankenversichert über den Job), Werte zwischen 50-€-Stufen gemittelt. Ihre genaue Rechnung macht das Programm mit Ihren eigenen Angaben. Die Eingaben bleiben in Ihrem Browser.</p>
+  </div>
+</section>
 <section id="bilder" class="abschnitt hell-hg">
   <div class="breite">
     <h2>So sieht Emmoke aus</h2>
@@ -126,6 +150,8 @@
 <section id="sicherheit" class="abschnitt">
   <div class="breite schmal">
     <h2>So sind Ihre Daten geschützt</h2>
+    <p><b>🔒 Ihre Daten werden verschlüsselt gespeichert.</b> Ihre Finanzdaten werden mit moderner AES-256-GCM-Verschlüsselung geschützt. Das Passwort wird nicht gespeichert. Auch Sicherungskopien und der Cloud-Abgleich nutzen nur die verschlüsselte Datei.</p>
+    <details><summary>Technische Details</summary>
     <ul class="haken">
       <li><b>AES-256-GCM:</b> Alle Daten liegen in einer verschlüsselten Datei. GCM erkennt außerdem, wenn die Datei verändert wurde.</li>
       <li><b>Ihr Passwort wird nirgends gespeichert.</b> Aus ihm wird mit PBKDF2-SHA512 (600.000 Durchläufe) der Schlüssel berechnet – das macht Raten sehr aufwendig.</li>
@@ -133,6 +159,7 @@
       <li><b>Sicherungen und Cloud-Abgleich</b> verwenden dieselbe verschlüsselte Datei. OneDrive, Google Drive oder iCloud sehen nur verschlüsselte Daten.</li>
       <li><b>Ihre Verantwortung:</b> PDF-Rechnungen, Excel- oder CSV-Exporte, die Sie speichern oder versenden, sind normale Dateien – bewahren Sie sie sorgfältig auf.</li>
     </ul>
+    </details>
   </div>
 </section>
 <section id="test" class="abschnitt hell-hg">
@@ -207,6 +234,6 @@
     Genannte Marken (z. B. ELSTER, Microsoft, OneDrive, Google, Android, Apple, iPhone) gehören ihren Inhabern; Emmoke steht in keiner Verbindung zu ihnen. Die Symbole für Windows und iPhone sind eigene Zeichnungen, keine Logos der Hersteller.
     Der Android-Roboter wird nach der Vorlage von Google wiedergegeben bzw. verändert und gemäß der Creative-Commons-Lizenz „Namensnennung 3.0“ verwendet.</p></div>
 </footer>
-<script src="seite.js"></script>
+<script src="rechner-daten.js"></script><script src="rechner.js"></script><script src="seite.js"></script>
 </body>
 </html>
