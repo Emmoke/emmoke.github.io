@@ -9,7 +9,7 @@
           danke: "Dankeschön!", dankeText: "Ihr Download startet gleich. Viel Freude beim Testen von Emmoke!" },
     en: { bald: "Coming soon", handbuch: "Manual coming soon", kontakt: "Contact", handbuchName: "Manual", zahl: "en-GB",
           danke: "Thank you!", dankeText: "Your download is starting. Enjoy testing Emmoke!" },
-    ar: { bald: "قريبًا", handbuch: "الدليل قريبًا", kontakt: "تواصل", handbuchName: "الدليل", zahl: "ar-EG",
+    ar: { bald: "قريبًا", handbuch: "الدليل قريبًا", kontakt: "تواصل", handbuchName: "الدليل", zahl: "de-DE", win: "ويندوز", android: "أندرويد",
           danke: "شكرًا لك!", dankeText: "سيبدأ التنزيل الآن. نتمنى لك تجربة ممتعة مع إيموك!" }
   }[sprache] || {};
 
@@ -98,7 +98,7 @@
             else if (/\.pdf$/i.test(a.name)) n.pdf += a.download_count;
           });
         });
-        document.getElementById("z-teile").textContent = "Windows " + f(n.win) + " · Android " + f(n.android) + " · " + T.handbuchName + " " + f(n.pdf);
+        document.getElementById("z-teile").textContent = (T.win || "Windows") + " " + f(n.win) + " · " + (T.android || "Android") + " " + f(n.android) + " · " + T.handbuchName + " " + f(n.pdf);
         z.hidden = false;
         hochzaehlen(document.getElementById("z-downloads"), n.win + n.android + n.pdf);
       })

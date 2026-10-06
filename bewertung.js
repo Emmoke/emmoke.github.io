@@ -14,7 +14,7 @@
           fehlt: "Please choose stars, write your opinion and agree to publication.", datum: "en-GB" },
     ar: { schnitt: "من 5 نجوم", anzahl: function (n) { return n === 1 ? "تقييم واحد" : n + " تقييمات"; }, keine: "لا توجد تقييمات بعد – اكتب أول تقييم!",
           betreff: "Bewertung Emmoke Finanzplan", sterne: "النجوم", name: "الاسم للعرض", text: "الرأي", zustimmung: "أوافق على نشر تقييمي بالاسم المذكور على emmoke.github.io.",
-          fehlt: "يرجى اختيار النجوم وكتابة رأيك والموافقة على النشر.", datum: "ar-EG" }
+          fehlt: "يرجى اختيار النجوم وكتابة رأيك والموافقة على النشر.", datum: "ar-EG-u-nu-latn" }
   }[sprache];
 
   function sternText(n) { return "★★★★★".slice(0, n) + "☆☆☆☆☆".slice(0, 5 - n); }

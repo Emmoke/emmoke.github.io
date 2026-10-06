@@ -4,7 +4,7 @@
   var R = window.EMMOKE_RECHNER, f = document.getElementById("rechner");
   if (!R || !f) return;
   var sprache = (document.documentElement.lang || "de").slice(0, 2);
-  var zahl = { de: "de-DE", en: "en-GB", ar: "ar-EG" }[sprache] || "de-DE";
+  var zahl = { de: "de-DE", en: "en-GB", ar: "de-DE" }[sprache] || "de-DE";
   var T = {
     de: { quote: "von jedem Gewinn-Euro zurücklegen", monat: "im Monat", brutto: "Bruttogehalt außerhalb 1.500–6.000 € – gerechnet mit dem nächsten Wert.",
           ku: "Kleinunternehmer möglich: keine Umsatzsteuer auf den Rechnungen (Umsatz bis 25.000 € im Vorjahr).",
