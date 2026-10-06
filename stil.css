@@ -226,7 +226,7 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .anfrage { display: grid; gap: 16px; }
 .anfrage fieldset { border: 1px solid var(--linie); border-radius: 10px; padding: 12px 16px; margin: 0; min-width: 0; }
 .anfrage legend { font-weight: 600; color: var(--navy); padding: 0 6px; }
-.anfrage-schritt { display: grid; gap: 16px; animation: anfrage-einblenden 240ms ease both; }
+.anfrage-schritt { display: grid; gap: calc(var(--abstand) * 2); animation: anfrage-einblenden 240ms ease both; }
 @keyframes anfrage-einblenden { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 .anfrage .wahl { display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .anfrage .wahl label { display: flex; gap: 8px; align-items: center; cursor: pointer; min-height: 32px; }
@@ -246,11 +246,12 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .anfrage-bestaetigung { max-width: 560px; border: 0; border-radius: var(--radius); padding: 24px; color: var(--text); box-shadow: 0 24px 70px rgba(16, 32, 56, .28); }
 .anfrage-bestaetigung::backdrop { background: rgba(15, 28, 48, .58); backdrop-filter: blur(3px); }
 .anfrage-bestaetigung h2 { font-size: 1.4rem; }
+.anfrage-bestaetigung pre { max-height: 40vh; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; padding: 12px; background: var(--hell); border-radius: 8px; }
 .anfrage-bestaetigung .anfrage-knoepfe { margin-top: 20px; }
 .anfrage .breit { grid-column: 1 / -1; }
 .anfrage button.knopf { justify-self: start; font: inherit; font-weight: 600; cursor: pointer; }
 .anfrage-ok { color: var(--gruen); margin: 0; }
-.kacheln { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; margin: 4px 0 8px; }
+.kacheln { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: var(--abstand); margin: 4px 0 8px; }
 .kachel { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 10px 12px; border: 1px solid var(--linie); border-radius: 10px; background: #fff; color: var(--text); cursor: pointer; transition: border-color var(--bewegung), background-color var(--bewegung), box-shadow var(--bewegung), transform var(--bewegung), color var(--bewegung); }
 .kachel:hover { border-color: var(--akzent); background: #f8faff; box-shadow: 0 6px 16px rgba(31, 56, 100, .12); transform: translateY(-2px); }
 .kachel input { width: 20px; height: 20px; margin: 0; flex: none; accent-color: var(--navy); }
