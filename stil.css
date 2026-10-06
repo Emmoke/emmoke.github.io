@@ -269,6 +269,8 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .cta-leiste .knopf.hell { flex: none; }
 .cta-leiste .knopf:not(.hell) { flex: 1; }
 .cta-leiste svg { width: 20px; height: 20px; }
+.cta-leiste .wa svg { width: 22px; height: 22px; }
+@media (max-width: 480px) { .cta-leiste .knopf.hell span { display: none; } .cta-leiste .knopf.hell { padding: 12px; } }
 .tel-knopf { display: inline-grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--linie); border-radius: 10px; background: #fff; color: var(--gruen); }
 .tel-knopf svg { width: 22px; height: 22px; }
 .tel-knopf:hover { border-color: var(--gruen); }
