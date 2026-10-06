@@ -178,10 +178,28 @@
   <div class="breite schmal">
     <h2>Projekt anfragen</h2>
     <p class="einleitung">Kreuzen Sie kurz an, was Sie benötigen – daraus wird automatisch eine fertige Anfrage per E-Mail. Oder buchen Sie direkt ein Erstgespräch.</p>
-    <form id="anfrage" class="karte anfrage" data-l-weiter="Weiter" data-l-zurueck="Zurück" data-l-stufen="Leistung|Unterlagen|Projekt|Termin|Anfrage" data-an="emmoke@outlook.de" data-betreff="Projektanfrage über emmoke.github.io"
-          data-l-leistung="Benötigt" data-l-unterlagen="Vorhandene Unterlagen" data-l-ort="Projektstandort" data-l-termin="Wunschtermin" data-l-art="Erstgespräch" data-l-zeit="Gut erreichbar" data-l-name="Name" data-l-tel="Telefon" data-l-nachricht="Nachricht">
-      <fieldset>
-        <legend>1. Was benötigen Sie?</legend>
+    <form id="anfrage" class="karte anfrage" data-l-weiter="Weiter" data-l-zurueck="Zurück" data-l-stufen="Kontakt|Leistung|Nachricht" data-an="emmoke@outlook.de" data-betreff="Projektanfrage über emmoke.github.io"
+          data-l-leistung="Benötigt" data-l-unterlagen="Vorhandene Unterlagen" data-l-ort="Projektstandort" data-l-termin="Wunschtermin" data-l-art="Erstgespräch" data-l-zeit="Gut erreichbar" data-l-email="E-Mail" data-l-review="Zusammenfassung Ihrer Anfrage" data-l-confirm-title="Anfrage per E-Mail vorbereiten?" data-l-confirm-text="Die Zusammenfassung wird an Ihr E-Mail-Programm übergeben. Dort können Sie die Nachricht prüfen und selbst absenden." data-l-confirm="E-Mail erstellen" data-l-cancel="Weiter bearbeiten" data-l-fehler="Bitte füllen Sie Name und gültige E-Mail-Adresse aus." data-l-name="Name" data-l-tel="Telefon" data-l-nachricht="Nachricht">
+      
+      
+      
+      
+      
+      <div class="anfrage-schritt"><fieldset>
+        <legend>1. Ihre Kontaktdaten</legend>
+        <div class="felder">
+          <label class="feld">E-Mail<input type="email" id="a-email" autocomplete="email" required placeholder="name@beispiel.de"></label><label class="feld">Name<input type="text" id="a-name" autocomplete="name" placeholder="Vor- und Nachname" required minlength="2"></label>
+          <label class="feld">Telefon<input type="text" id="a-tel" autocomplete="tel" inputmode="tel" placeholder="optional"></label>
+          
+        </div>
+      </fieldset><fieldset>
+        <legend>Projektstandort und Wunschtermin</legend>
+        <div class="felder">
+          <label class="feld">Projektstandort<input type="text" id="a-ort" placeholder="z. B. Halle (Saale)"></label>
+          <label class="feld">Wunschtermin<input type="text" id="a-termin" placeholder="z. B. bis Ende November"></label>
+        </div>
+      </fieldset></div><div class="anfrage-schritt"><fieldset>
+        <legend>2. Was benötigen Sie?</legend>
         <div class="kacheln">
           <label class="kachel"><input type="checkbox" name="leistung"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18v16H3zM3 12h7v8M10 4v5M14 12h7M14 12v4"/></svg><span>Bestandsplan</span></label>
           <label class="kachel"><input type="checkbox" name="leistung"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="13" r="6"/><circle cx="9" cy="13" r="1.6"/><path d="M9 19h12.5v-3M18 19v-2"/></svg><span>Aufmaß</span></label>
@@ -194,9 +212,8 @@
           <label class="kachel"><input type="checkbox" name="leistung"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="13" rx="1.5"/><path d="M8 21h8M12 17v4M8.5 14v-3l3.5-2.8 3.5 2.8v3z"/></svg><span>Visualisierung</span></label>
           <label class="kachel"><input type="checkbox" name="leistung"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></svg><span>Sonstiges</span></label>
         </div>
-      </fieldset>
-      <fieldset>
-        <legend>2. Welche Unterlagen sind vorhanden?</legend>
+      </fieldset><fieldset>
+        <legend>Welche Unterlagen sind vorhanden?</legend>
         <div class="kacheln">
           <label class="kachel"><input type="checkbox" name="unterlagen"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 13h6M9 17h6"/></svg><span>PDF</span></label>
           <label class="kachel"><input type="checkbox" name="unterlagen"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6a2 2 0 0 1 4 0v14a2 2 0 0 0-4 0z"/><path d="M6 4h14v14H8"/><path d="M11 8h6v6h-6z"/></svg><span>Papierplan</span></label>
@@ -205,32 +222,15 @@
           <label class="kachel"><input type="checkbox" name="unterlagen"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h4l2-3h6l2 3h4v12H3z"/><circle cx="12" cy="13.5" r="3.5"/></svg><span>Fotos</span></label>
           <label class="kachel"><input type="checkbox" name="unterlagen"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg><span>Keine Unterlagen</span></label>
         </div>
-      </fieldset>
-      <fieldset>
-        <legend>3. Projektdaten</legend>
-        <div class="felder">
-          <label class="feld">Projektstandort<input type="text" id="a-ort" placeholder="z. B. Halle (Saale)"></label>
-          <label class="feld">Wunschtermin<input type="text" id="a-termin" placeholder="z. B. bis Ende November"></label>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>4. Erstgespräch – wie am liebsten?</legend>
+      </fieldset><fieldset>
+        <legend>Erstgespräch – wie am liebsten?</legend>
         <div class="kacheln">
           <label class="kachel"><input type="radio" name="art"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Telefonat</span></label>
           <label class="kachel"><input type="radio" name="art"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1"/><path d="M2 19h20"/></svg><span>Online-Besprechung</span></label>
           <label class="kachel"><input type="radio" name="art"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Vor Ort (nach Absprache)</span></label>
         </div>
         <div class="felder"><label class="feld breit">Gut erreichbar<input type="text" id="a-zeit" placeholder="z. B. Di oder Do ab 16 Uhr"></label></div>
-      </fieldset>
-      <fieldset>
-        <legend>5. Ihre Kontaktdaten und Nachricht</legend>
-        <div class="felder">
-          <label class="feld">Name<input type="text" id="a-name" autocomplete="name" placeholder="Vor- und Nachname"></label>
-          <label class="feld">Telefon<input type="text" id="a-tel" autocomplete="tel" inputmode="tel" placeholder="optional"></label>
-          <label class="feld breit">Nachricht<textarea id="a-nachricht" rows="4" placeholder="Kurz: Objekt, Umfang, Besonderheiten"></textarea></label>
-        </div>
-      </fieldset>
-      <div class="anfrage-knoepfe">
+      </fieldset></div><div class="anfrage-schritt"><fieldset><legend>3. Ihre Nachricht</legend><div class="felder"><label class="feld breit">Nachricht<textarea id="a-nachricht" rows="4" placeholder="Kurz: Objekt, Umfang, Besonderheiten"></textarea></label></div><section class="anfrage-review" aria-live="polite"><h3>Zusammenfassung Ihrer Anfrage</h3><dl></dl></section></fieldset></div><div class="anfrage-knoepfe">
         <button type="submit" class="knopf"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Anfrage per E-Mail erstellen</span></button>
         <a href="#" id="termin-link" class="knopf hell" rel="noopener" hidden><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Besprechungstermin buchen</span></a>
       </div>
