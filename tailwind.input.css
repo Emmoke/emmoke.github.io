@@ -1,0 +1,6 @@
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
+
+@source "./index.html";
+@source "./en/index.html";
+@source "./ar/index.html";

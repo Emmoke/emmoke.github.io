@@ -1,20 +1,10 @@
 {
   "name": "emmoke.github.io",
   "version": "1.0.0",
-  "description": "",
-  "main": "anfrage.js",
   "scripts": {
-    "test": "echo \"No test suite configured\"",
     "build:css": "tailwindcss -i ./tailwind.input.css -o ./tailwind.css --minify"
   },
-  "repository": {
-    "type": "git",
-    "url": "http://localhost:26831/Emmoke/emmoke.github.io"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "private": true,
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",
     "tailwindcss": "^4.3.3"
