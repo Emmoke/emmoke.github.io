@@ -11,6 +11,9 @@ window.EMMOKE = {
   // Freiwillige Unterstützung (ohne Gegenleistung), z. B. "https://paypal.me/…". Leer = Abschnitt „Emmoke unterstützen“ ausgeblendet.
   // Vor dem Einschalten: Datenschutz um den Zahlungsdienst ergänzen; Einnahmen steuerlich erfassen.
   unterstuetzenLink: "",
+  // Terminbuchung für das Erstgespräch (z. B. Calendly, Microsoft Bookings, cal.com): öffentlicher https-Buchungslink.
+  // Leer = Knopf „Besprechungstermin buchen“ ausgeblendet. Vor dem Einschalten: Datenschutz um den Buchungsdienst ergänzen.
+  terminLink: "",
   // Besuchszähler (GoatCounter, ohne Cookies): Code des eigenen GoatCounter-Kontos, z. B. "emmoke" für emmoke.goatcounter.com. Leer = kein Besuchszähler.
   // Vor dem Einschalten: Datenschutz ergänzen und in der CSP aller Seiten img-src/connect-src um https://*.goatcounter.com erweitern.
   besucheCode: "",
