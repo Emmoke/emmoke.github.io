@@ -1,0 +1,36 @@
+/* Anleitung Schritt für Schritt – gemeinsam für de, en, ar */
+.schritte { display: grid; grid-template-columns: 300px 1fr; gap: 32px; align-items: start; }
+.liste { position: sticky; top: 84px; list-style: none; padding: 0; margin: 0; counter-reset: s; }
+.liste li { counter-increment: s; margin: 0 0 6px; }
+.liste button { width: 100%; text-align: start; border: 1px solid var(--linie); background: #fff; border-radius: 10px; padding: 10px 12px 10px 46px;
+                position: relative; cursor: pointer; font: inherit; color: var(--text); transition: background .2s, border-color .2s; }
+.liste button::before { content: counter(s); position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; border-radius: 50%;
+                        background: var(--hell); color: var(--navy); font-weight: 700; display: grid; place-items: center; font-size: .85rem; }
+.liste button.aktiv { border-color: var(--navy); background: #EEF3FB; }
+.liste button.aktiv::before { background: var(--navy); color: #fff; }
+.karte-schritt { display: none; }
+.karte-schritt.sichtbar { display: block; animation: hinein .45s ease; }
+.karte-schritt img { border-radius: 12px; border: 1px solid var(--linie); box-shadow: var(--schatten); margin: 14px 0; animation: auftauchen .6s ease; }
+.karte-schritt ol, .karte-schritt ul { padding-left: 20px; }
+.karte-schritt li { margin: 0 0 6px; }
+@keyframes hinein { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: none; } }
+@keyframes auftauchen { from { opacity: 0; transform: scale(.97) translateY(10px); } to { opacity: 1; transform: none; } }
+.steuerung { display: flex; gap: 10px; align-items: center; margin-top: 8px; flex-wrap: wrap; }
+.fortschritt { flex: 1; height: 6px; background: var(--linie); border-radius: 3px; overflow: hidden; min-width: 120px; }
+.fortschritt span { display: block; height: 100%; background: var(--navy); width: 0; transition: width .45s ease; }
+.tipp { background: #EEF3FB; border-left: 4px solid var(--akzent); border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
+.info { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--grau); color: var(--grau); font-size: 11px; font-weight: 700; }
+button.knopf { font: inherit; cursor: pointer; }
+button.knopf:disabled { opacity: .45; cursor: default; transform: none; box-shadow: none; }
+
+[dir="rtl"] .liste button { padding: 10px 46px 10px 12px; }
+[dir="rtl"] .liste button::before { left: auto; right: 12px; }
+[dir="rtl"] .karte-schritt ol, [dir="rtl"] .karte-schritt ul { padding-left: 0; padding-right: 20px; }
+[dir="rtl"] .tipp { border-left: none; border-right: 4px solid var(--akzent); }
+[dir="rtl"] .fortschritt span { margin-left: auto; }
+[dir="rtl"] .karte-schritt.sichtbar { animation-name: hinein-rtl; }
+@keyframes hinein-rtl { from { opacity: 0; transform: translateX(-28px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 900px) { .schritte { grid-template-columns: 1fr; } .liste { position: static; display: flex; flex-wrap: wrap; gap: 6px; } .liste li { margin: 0; }
+                            .liste button { padding: 8px 10px 8px 40px; font-size: .9rem; }
+                            [dir="rtl"] .liste button { padding: 8px 40px 8px 10px; } }

@@ -77,6 +77,7 @@ nav a:hover { color: var(--akzent); }
 .zustimmung input { width: 20px; height: 20px; margin-top: 3px; flex: none; accent-color: var(--navy); }
 .zustimmung p { margin: 8px 0 0 32px; }
 .gesperrt { opacity: .45; cursor: not-allowed; }
+.pruefsumme { font-family: Consolas, "Courier New", monospace; font-size: .72rem; color: var(--grau); word-break: break-all; direction: ltr; text-align: left; margin: 0 0 10px !important; }
 .dl .knopf { margin-top: auto; text-align: center; }
 
 details { background: #fff; border: 1px solid var(--linie); border-radius: 10px; padding: 14px 18px; margin: 0 0 10px; }
@@ -88,15 +89,39 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .text-seite { padding: 48px 0 64px; }
 .platzhalter { background: #FFF8E1; border: 1px solid #F3D27A; border-radius: 10px; padding: 14px 18px; }
 
+/* Sprachwahl DE · EN · AR */
+.sprachen { display: flex; gap: 2px; border: 1px solid var(--linie); border-radius: 999px; padding: 2px; }
+.sprachen a { padding: 3px 9px; border-radius: 999px; font-size: .85rem; color: var(--grau); text-decoration: none; }
+.sprachen a.aktiv { background: var(--navy); color: #fff; }
+.kernaussage { font-size: 1.2rem; font-weight: 600; color: var(--navy); border-left: 4px solid var(--gruen); padding: 6px 0 6px 14px; margin: 0 0 16px; }
+.wer { display: grid; grid-template-columns: 1fr 2fr; gap: 28px; align-items: center; }
+.galerie figure.beleg img { object-position: top center; }
+
+/* Arabisch: von rechts nach links */
+[dir="rtl"] body { font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", "Noto Sans Arabic", Arial, sans-serif; line-height: 1.75; }
+[dir="rtl"] .haken li { padding-left: 0; padding-right: 30px; }
+[dir="rtl"] .haken li::before { left: auto; right: 0; }
+[dir="rtl"] .zustimmung { border-left: 1px solid var(--linie); border-right: 4px solid var(--akzent); }
+[dir="rtl"] .zustimmung p { margin: 8px 32px 0 0; }
+[dir="rtl"] .kernaussage { border-left: none; border-right: 4px solid var(--gruen); padding: 6px 14px 6px 0; }
+[dir="rtl"] .preis .haken { text-align: right; }
+[dir="rtl"] .galerie img { object-position: top right; }
+.ltr { direction: ltr; unicode-bidi: embed; display: inline-block; }
+
 @media (max-width: 900px) {
-  .held-innen, .raster.zwei { grid-template-columns: 1fr; }
+  .held-innen, .raster.zwei, .wer { grid-template-columns: 1fr; }
   .raster.drei, .galerie { grid-template-columns: 1fr 1fr; }
   .leiste-innen { grid-template-columns: 1fr 1fr; }
-  nav a:not(.knopf) { display: none; }
+  nav a:not(.knopf):not(.sprachen a) { display: none; }
 }
 @media (max-width: 560px) {
   .marke span { display: none; }
   .knopf.klein { white-space: nowrap; font-size: .9rem; }
+  nav { gap: 10px; }
+  .kopf-innen { gap: 10px; }
   .raster.drei, .galerie { grid-template-columns: 1fr; }
   .held { padding-top: 32px; }
+}
+@media (max-width: 440px) {
+  nav .knopf.klein { display: none; }   /* am schmalen Handy: Logo + Sprachwahl; „Testen“ steht gleich darunter */
 }

@@ -7,33 +7,7 @@
 <meta name="description" content="So benutzen Sie Emmoke Finanzplan: installieren, Rundgang, Beispieldaten, erste Rechnung, Zuhause, Netto-Rechner, Handy verbinden – Schritt für Schritt mit Bildern.">
 <link rel="icon" href="bilder/logo.png">
 <link rel="stylesheet" href="stil.css">
-<style>
-  .schritte { display: grid; grid-template-columns: 300px 1fr; gap: 32px; align-items: start; }
-  .liste { position: sticky; top: 84px; list-style: none; padding: 0; margin: 0; counter-reset: s; }
-  .liste li { counter-increment: s; margin: 0 0 6px; }
-  .liste button { width: 100%; text-align: left; border: 1px solid var(--linie); background: #fff; border-radius: 10px; padding: 10px 12px 10px 46px;
-                  position: relative; cursor: pointer; font: inherit; color: var(--text); transition: background .2s, border-color .2s; }
-  .liste button::before { content: counter(s); position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 24px; height: 24px; border-radius: 50%;
-                          background: var(--hell); color: var(--navy); font-weight: 700; display: grid; place-items: center; font-size: .85rem; }
-  .liste button.aktiv { border-color: var(--navy); background: #EEF3FB; }
-  .liste button.aktiv::before { background: var(--navy); color: #fff; }
-  .karte-schritt { display: none; }
-  .karte-schritt.sichtbar { display: block; animation: hinein .45s ease; }
-  .karte-schritt img { border-radius: 12px; border: 1px solid var(--linie); box-shadow: var(--schatten); margin: 14px 0; animation: auftauchen .6s ease; }
-  .karte-schritt ol, .karte-schritt ul { padding-left: 20px; }
-  .karte-schritt li { margin: 0 0 6px; }
-  @keyframes hinein { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: none; } }
-  @keyframes auftauchen { from { opacity: 0; transform: scale(.97) translateY(10px); } to { opacity: 1; transform: none; } }
-  .steuerung { display: flex; gap: 10px; align-items: center; margin-top: 8px; flex-wrap: wrap; }
-  .fortschritt { flex: 1; height: 6px; background: var(--linie); border-radius: 3px; overflow: hidden; min-width: 120px; }
-  .fortschritt span { display: block; height: 100%; background: var(--navy); width: 0; transition: width .45s ease; }
-  .tipp { background: #EEF3FB; border-left: 4px solid var(--akzent); border-radius: 8px; padding: 10px 14px; margin: 10px 0; }
-  .info { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--grau); color: var(--grau); font-size: 11px; font-weight: 700; }
-  button.knopf { font: inherit; cursor: pointer; }
-  button.knopf:disabled { opacity: .45; cursor: default; transform: none; box-shadow: none; }
-  @media (max-width: 900px) { .schritte { grid-template-columns: 1fr; } .liste { position: static; display: flex; flex-wrap: wrap; gap: 6px; } .liste li { margin: 0; }
-                              .liste button { padding: 8px 10px 8px 40px; font-size: .9rem; } }
-</style>
+<link rel="stylesheet" href="anleitung.css">
 </head>
 <body>
 <header class="kopf">
@@ -42,7 +16,7 @@
     <nav>
       <a href="index.html#funktionen">Funktionen</a>
       <a href="anleitung.html">Anleitung</a>
-      <a href="index.html#test">Testversion</a>
+      <span class="sprachen"><a href="anleitung.html" class="aktiv" lang="de">DE</a><a href="en/anleitung.html" lang="en">EN</a><a href="ar/anleitung.html" lang="ar">عربي</a></span>
       <a href="index.html#download" class="knopf klein">Kostenlos testen</a>
     </nav>
   </div>
@@ -101,6 +75,7 @@
             <li><b>+ Neu › Rechnung</b>: Kunde wählen, Positionen eintragen (auch aus dem Leistungskatalog).</li>
             <li><b>Festschreiben</b> und per <b>E-Mail</b> mit PDF senden. Zahlung kommt? <b>Bezahlt</b> – die Einnahme steht automatisch in der EÜR.</li>
           </ol>
+          <img src="bilder/rechnung.png" alt="Beispiel-Rechnung als PDF">
         </section>
 
         <section class="karte-schritt" data-titel="Zuhause: Kosten und Kontoauszug">
@@ -136,7 +111,7 @@
         <div class="steuerung">
           <button class="knopf hell" id="zurueck">‹ Zurück</button>
           <div class="fortschritt"><span id="balken"></span></div>
-          <button class="knopf" id="weiter">Weiter ›</button>
+          <button class="knopf" id="weiter" data-weiter="Weiter ›" data-ende="Zum Download">Weiter ›</button>
         </div>
         <p class="klein grau" style="margin-top:18px">Ausführlich: Benutzerhandbuch (PDF) im Programm unter Profil › Hilfe und auf der <a href="index.html#download">Download-Seite</a>.</p>
       </div>
@@ -144,33 +119,8 @@
   </div>
 </main>
 
-<footer class="fuss"><div class="breite fuss-innen"><span>© 2026 Emmoke Finanzplan</span><span><a href="anleitung.html">Anleitung</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></div></footer>
+<footer class="fuss"><div class="breite fuss-innen"><span>© 2026 Emmoke Finanzplan</span><span><a href="anleitung.html">Anleitung</a> · <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></div></footer>
 
-<script>
-  const karten = [...document.querySelectorAll('.karte-schritt')];
-  const liste = document.getElementById('liste');
-  let i = 0;
-  karten.forEach((k, n) => {
-    const li = document.createElement('li');
-    const b = document.createElement('button');
-    b.textContent = k.dataset.titel;
-    b.addEventListener('click', () => zeige(n));
-    li.appendChild(b); liste.appendChild(li);
-  });
-  function zeige(n) {
-    i = Math.max(0, Math.min(karten.length - 1, n));
-    karten.forEach((k, m) => k.classList.toggle('sichtbar', m === i));
-    [...liste.querySelectorAll('button')].forEach((b, m) => b.classList.toggle('aktiv', m === i));
-    document.getElementById('balken').style.width = ((i + 1) / karten.length * 100) + '%';
-    document.getElementById('zurueck').disabled = i === 0;
-    document.getElementById('weiter').textContent = i === karten.length - 1 ? 'Zum Download' : 'Weiter ›';
-    history.replaceState(null, '', '#schritt-' + (i + 1));
-  }
-  document.getElementById('zurueck').addEventListener('click', () => zeige(i - 1));
-  document.getElementById('weiter').addEventListener('click', () => { if (i === karten.length - 1) location.href = 'index.html#download'; else zeige(i + 1); });
-  document.addEventListener('keydown', e => { if (e.key === 'ArrowRight') zeige(i + 1); if (e.key === 'ArrowLeft') zeige(i - 1); });
-  const m = location.hash.match(/schritt-(\d+)/);
-  zeige(m ? parseInt(m[1], 10) - 1 : 0);
-</script>
+<script src="anleitung.js"></script>
 </body>
 </html>
