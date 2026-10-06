@@ -5,9 +5,12 @@
   var k = window.EMMOKE || {};
   var sprache = (document.documentElement.lang || "de").slice(0, 2);
   var T = {
-    de: { bald: "Bald verfügbar", handbuch: "Handbuch folgt", kontakt: "Kontakt", zaehler: "Bisher heruntergeladen", handbuchName: "Handbuch", zahl: "de-DE" },
-    en: { bald: "Coming soon", handbuch: "Manual coming soon", kontakt: "Contact", zaehler: "Downloads so far", handbuchName: "Manual", zahl: "en-GB" },
-    ar: { bald: "قريبًا", handbuch: "الدليل قريبًا", kontakt: "تواصل", zaehler: "عدد التنزيلات حتى الآن", handbuchName: "الدليل", zahl: "ar-EG" }
+    de: { bald: "Bald verfügbar", handbuch: "Handbuch folgt", kontakt: "Kontakt", handbuchName: "Handbuch", zahl: "de-DE",
+          danke: "Dankeschön!", dankeText: "Ihr Download startet gleich. Viel Freude beim Testen von Emmoke!" },
+    en: { bald: "Coming soon", handbuch: "Manual coming soon", kontakt: "Contact", handbuchName: "Manual", zahl: "en-GB",
+          danke: "Thank you!", dankeText: "Your download is starting. Enjoy testing Emmoke!" },
+    ar: { bald: "قريبًا", handbuch: "الدليل قريبًا", kontakt: "تواصل", handbuchName: "الدليل", zahl: "ar-EG",
+          danke: "شكرًا لك!", dankeText: "سيبدأ التنزيل الآن. نتمنى لك تجربة ممتعة مع إيموك!" }
   }[sprache] || {};
 
   document.querySelectorAll(".version").forEach(function (e) { e.textContent = k.version || ""; });
@@ -42,14 +45,37 @@
     };
     dl.forEach(function (a) {
       a.addEventListener("click", function (e) {
-        if (!haken.checked) { e.preventDefault(); haken.focus(); if (hinweis) hinweis.hidden = false; haken.closest(".zustimmung").scrollIntoView({ block: "center" }); }
+        if (!haken.checked) { e.preventDefault(); haken.focus(); if (hinweis) hinweis.hidden = false; haken.closest(".zustimmung").scrollIntoView({ block: "center" }); return; }
+        danke();   // Download läuft normal weiter – nur ein Dankeschön darüber
       });
     });
     haken.addEventListener("change", freigeben);
     freigeben();
   }
 
-  // Wie oft heruntergeladen (Zähler von GitHub, alle Versionen zusammen, ohne Cookies)
+  var ruhig = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var f = function (x) { return Math.round(x).toLocaleString(T.zahl); };
+
+  // Zahl hochzählen lassen, sobald sie sichtbar wird
+  function hochzaehlen(el, ziel) {
+    el.textContent = f(ziel);   // die richtige Zahl steht immer da – die Animation ist nur Zugabe
+    if (ruhig || !("IntersectionObserver" in window)) return;
+    var start = function () {
+      var t0 = performance.now(), dauer = 1400;
+      (function schritt(t) {
+        var p = Math.min(1, (t - t0) / dauer), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = f(ziel * e);
+        if (p < 1) requestAnimationFrame(schritt);
+      })(t0);
+      setTimeout(function () { el.textContent = f(ziel); }, dauer + 300);   // falls der Browser Animationen anhält
+    };
+    var io = new IntersectionObserver(function (eintraege) {
+      if (eintraege.some(function (x) { return x.isIntersecting; })) { io.disconnect(); start(); }
+    }, { threshold: 0.4 });
+    io.observe(el);
+  }
+
+  // Zähler: Downloads (GitHub, alle Versionen zusammen) und Besuche (GoatCounter, ohne Cookies – nur wenn in konfig.js eingetragen)
   var z = document.getElementById("zaehler");
   if (z && k.zaehlerRepo) {
     fetch("https://api.github.com/repos/" + k.zaehlerRepo + "/releases?per_page=100")
@@ -63,10 +89,57 @@
             else if (/\.pdf$/i.test(a.name)) n.pdf += a.download_count;
           });
         });
-        var f = function (x) { return x.toLocaleString(T.zahl); };
-        z.textContent = T.zaehler + ": Windows " + f(n.win) + " · Android " + f(n.android) + " · " + T.handbuchName + " " + f(n.pdf);
+        document.getElementById("z-teile").textContent = "Windows " + f(n.win) + " · Android " + f(n.android) + " · " + T.handbuchName + " " + f(n.pdf);
         z.hidden = false;
+        hochzaehlen(document.getElementById("z-downloads"), n.win + n.android + n.pdf);
       })
       .catch(function () { });
+  }
+  if (z && /^[a-z0-9-]+$/.test(k.besucheCode || "")) {
+    var basis = "https://" + k.besucheCode + ".goatcounter.com";
+    // Besuch zählen: nur Seite und Titel, keine Cookies, keine IP-Speicherung beim Dienst
+    new Image().src = basis + "/count?p=" + encodeURIComponent(location.pathname) + "&t=" + encodeURIComponent(document.title) + "&rnd=" + Math.random().toString(36).slice(2);
+    fetch(basis + "/counter/TOTAL.json")
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (j) {
+        var zahl = parseInt(String(j.count).replace(/\D/g, ""), 10);
+        if (!(zahl >= 0)) return;
+        document.getElementById("z-besuche").hidden = false;
+        z.hidden = false;
+        hochzaehlen(document.getElementById("z-besuche-zahl"), zahl);
+      })
+      .catch(function () { });
+  }
+
+  // Dankeschön nach dem Klick auf einen Download – mit kleinem Konfetti
+  function danke() {
+    var alt = document.querySelector(".danke");
+    if (alt) alt.remove();
+    var box = document.createElement("div");
+    box.className = "danke";
+    box.setAttribute("role", "status");
+    var karte = document.createElement("div");
+    karte.className = "danke-karte";
+    var h = document.createElement("b"); h.textContent = T.danke;
+    var p = document.createElement("span"); p.textContent = T.dankeText;
+    karte.appendChild(h); karte.appendChild(p);
+    box.appendChild(karte);
+    if (!ruhig) {
+      var farben = ["#1F3864", "#2E75B6", "#2E7D32", "#E6A23C", "#3DDC84", "#C62828"];
+      for (var i = 0; i < 36; i++) {
+        var s = document.createElement("i");
+        s.className = "konfetti";
+        s.style.left = (Math.random() * 100) + "%";
+        s.style.background = farben[i % farben.length];
+        s.style.animationDelay = (Math.random() * 0.6) + "s";
+        s.style.animationDuration = (1.8 + Math.random() * 1.4) + "s";
+        s.style.transform = "rotate(" + Math.round(Math.random() * 360) + "deg)";
+        box.appendChild(s);
+      }
+    }
+    box.addEventListener("click", function () { box.remove(); });
+    document.body.appendChild(box);
+    setTimeout(function () { box.classList.add("weg"); }, 3800);
+    setTimeout(function () { box.remove(); }, 4400);
   }
 })();

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://api.github.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin">
+<meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https://*.goatcounter.com; connect-src https://api.github.com https://*.goatcounter.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emmoke Finanzplan – Software für Job, Nebengewerbe, Haushalt und Steuer</title>
 <meta name="description" content="Software für Nebengewerbe und Kleinunternehmer: Rechnungen schreiben, EÜR, Steuerplanung, Nebenkosten und Verträge – Job, Gewerbe und Haushalt in einem Programm. Kostenlose Testversion für Windows und Android.">
@@ -194,7 +194,11 @@
       <div class="karte dl"><svg class="dl-symbol" viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="4" width="28" height="56" rx="6" fill="#1B2433"/><rect x="20.5" y="7" width="23" height="50" rx="4" fill="#EEF1F5"/><rect x="27" y="8.5" width="10" height="3" rx="1.5" fill="#1B2433"/><rect x="24" y="16" width="7" height="7" rx="2" fill="#2E75B6"/><rect x="33" y="16" width="7" height="7" rx="2" fill="#2E7D32"/><rect x="24" y="25" width="7" height="7" rx="2" fill="#E6A23C"/><rect x="33" y="25" width="7" height="7" rx="2" fill="#1F3864"/><rect x="27" y="52" width="10" height="1.6" rx=".8" fill="#1B2433"/></svg><h3>iPhone &amp; iPad</h3><p>Die iPhone-App ist in Vorbereitung und erscheint im App Store.</p><a id="dl-ios" class="knopf hell" href="#">Bald verfügbar</a></div>
     </div>
     <p class="mitte-text"><a id="dl-handbuch" href="#">Benutzerhandbuch ansehen (PDF)</a> · <a href="anleitung.html">Anleitung Schritt für Schritt</a></p>
-    <p id="zaehler" class="mitte-text klein grau" hidden></p>
+    <div id="zaehler" class="zaehler" hidden>
+      <div class="zahl-karte" id="z-besuche" hidden><b id="z-besuche-zahl">0</b><span>Besuche</span></div>
+      <div class="zahl-karte"><b id="z-downloads">0</b><span>Downloads</span></div>
+      <p class="klein grau" id="z-teile"></p>
+    </div>
     <p class="herkunft klein grau">Offizielle Downloads gibt es nur über diese Seite <b>emmoke.github.io</b> – die Dateien liegen bei GitHub im Konto „Emmoke“. Prüfen Sie nach dem Herunterladen die SHA-256-Prüfsumme (Windows: <code>Get-FileHash Datei</code> in PowerShell). Die Android-App ist mit dem oben genannten Zertifikat signiert; Updates installiert Android nur, wenn das Zertifikat gleich ist. Das Windows-Setup ist noch nicht mit einem gekauften Code-Signatur-Zertifikat signiert – Windows SmartScreen kann deshalb warnen. <a href="https://github.com/Emmoke/emmoke.github.io/releases">Änderungsprotokoll und alle Versionen</a>.</p>
   </div>
 </section>
