@@ -215,7 +215,26 @@
   </div>
 </section>
 
-<section id="fragen" class="abschnitt">
+<section id="bewertungen" class="abschnitt">
+  <div class="breite">
+    <h2>Meinungen &amp; Bewertungen</h2>
+    <p class="einleitung">Wie gefällt Ihnen Emmoke? Ihre Meinung hilft, das Programm besser zu machen.</p>
+    <p id="bw-gesamt" class="bw-gesamt"></p>
+    <div id="bw-liste" class="raster drei bw-liste"></div>
+    <form id="bw-form" class="karte bw-form" autocomplete="off">
+      <h3>Ihre Bewertung</h3>
+      <div class="stern-wahl" role="group" aria-label="Sterne"><button type="button" aria-label="1 Stern">★</button><button type="button" aria-label="2 Sterne">★</button><button type="button" aria-label="3 Sterne">★</button><button type="button" aria-label="4 Sterne">★</button><button type="button" aria-label="5 Sterne">★</button></div>
+      <label>Ihre Meinung<textarea name="text" rows="4" maxlength="1200" placeholder="Was gefällt Ihnen, was fehlt?"></textarea></label>
+      <label>Name zur Anzeige (z. B. &bdquo;Anna K.&ldquo;, freiwillig)<input type="text" name="name" maxlength="40"></label>
+      <label class="bw-zust"><input type="checkbox" name="zustimmung"><span>Ich bin einverstanden, dass meine Bewertung mit diesem Namen auf dieser Webseite veröffentlicht wird (Widerruf jederzeit per E-Mail).</span></label>
+      <p id="bw-meldung" class="klein bw-fehler" hidden></p>
+      <button type="submit" class="knopf">Per E-Mail senden</button>
+      <p id="bw-danke" class="klein bw-ok" hidden>Danke! Ihr E-Mail-Programm öffnet sich – bitte die E-Mail noch abschicken.</p>
+    </form>
+    <p class="klein grau bw-pruefung"><b>So prüfen wir Bewertungen:</b> Wir veröffentlichen nur Bewertungen, die uns per E-Mail von Testerinnen und Testern erreichen und deren Veröffentlichung zugestimmt wurde. Wir lesen jede Bewertung vor der Freischaltung, veröffentlichen positive und negative gleichermaßen und entfernen nur beleidigende oder rechtswidrige Inhalte. Für Bewertungen wird nichts bezahlt oder angeboten.</p>
+  </div>
+</section>
+<section id="fragen" class="abschnitt hell-hg">
   <div class="breite schmal">
     <h2>Häufige Fragen</h2>
     <details><summary>Wo liegen meine Daten?</summary><p>Verschlüsselt auf Ihrem PC. Wenn Sie PC und Handy nutzen, wählen Sie einen eigenen Cloud-Ordner (OneDrive, iCloud Drive, Google Drive). Der Hersteller hat keinen Zugriff.</p></details>
@@ -238,6 +257,6 @@
     Genannte Marken (z. B. ELSTER, Microsoft, OneDrive, Google, Android, Apple, iPhone) gehören ihren Inhabern; Emmoke steht in keiner Verbindung zu ihnen. Die Symbole für Windows und iPhone sind eigene Zeichnungen, keine Logos der Hersteller.
     Der Android-Roboter wird nach der Vorlage von Google wiedergegeben bzw. verändert und gemäß der Creative-Commons-Lizenz „Namensnennung 3.0“ verwendet.</p></div>
 </footer>
-<script src="rechner-daten.js"></script><script src="rechner.js"></script><script src="seite.js"></script>
+<script src="rechner-daten.js"></script><script src="rechner.js"></script><script src="bewertungen-daten.js"></script><script src="bewertung.js"></script><script src="seite.js"></script>
 </body>
 </html>

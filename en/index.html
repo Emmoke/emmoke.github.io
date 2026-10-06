@@ -215,7 +215,26 @@
   </div>
 </section>
 
-<section id="fragen" class="abschnitt">
+<section id="bewertungen" class="abschnitt">
+  <div class="breite">
+    <h2>Opinions &amp; reviews</h2>
+    <p class="einleitung">How do you like Emmoke? Your opinion helps to improve the program.</p>
+    <p id="bw-gesamt" class="bw-gesamt"></p>
+    <div id="bw-liste" class="raster drei bw-liste"></div>
+    <form id="bw-form" class="karte bw-form" autocomplete="off">
+      <h3>Your review</h3>
+      <div class="stern-wahl" role="group" aria-label="Stars"><button type="button" aria-label="1 star">★</button><button type="button" aria-label="2 stars">★</button><button type="button" aria-label="3 stars">★</button><button type="button" aria-label="4 stars">★</button><button type="button" aria-label="5 stars">★</button></div>
+      <label>Your opinion<textarea name="text" rows="4" maxlength="1200" placeholder="What do you like, what is missing?"></textarea></label>
+      <label>Name to display (e.g. &ldquo;Anna K.&rdquo;, optional)<input type="text" name="name" maxlength="40"></label>
+      <label class="bw-zust"><input type="checkbox" name="zustimmung"><span>I agree that my review may be published with this name on this website (can be withdrawn at any time by e-mail).</span></label>
+      <p id="bw-meldung" class="klein bw-fehler" hidden></p>
+      <button type="submit" class="knopf">Send by e-mail</button>
+      <p id="bw-danke" class="klein bw-ok" hidden>Thank you! Your e-mail program opens – please send the e-mail.</p>
+    </form>
+    <p class="klein grau bw-pruefung"><b>How we check reviews:</b> We only publish reviews that reach us by e-mail from testers who agreed to publication. We read every review before publishing, publish positive and negative ones alike and only remove insulting or unlawful content. Nothing is paid or offered for reviews.</p>
+  </div>
+</section>
+<section id="fragen" class="abschnitt hell-hg">
   <div class="breite schmal">
     <h2>Frequently asked questions</h2>
     <details><summary>Where is my data stored?</summary><p>Encrypted on your PC. If you use PC and phone, you choose your own cloud folder (OneDrive, iCloud Drive, Google Drive). The vendor has no access.</p></details>
@@ -239,6 +258,6 @@
     The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License.
     In case of doubt, the German version of the legal texts is binding.</p></div>
 </footer>
-<script src="../rechner-daten.js"></script><script src="../rechner.js"></script><script src="../seite.js"></script>
+<script src="../rechner-daten.js"></script><script src="../rechner.js"></script><script src="../bewertungen-daten.js"></script><script src="../bewertung.js"></script><script src="../seite.js"></script>
 </body>
 </html>

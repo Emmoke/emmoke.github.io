@@ -215,7 +215,26 @@
   </div>
 </section>
 
-<section id="fragen" class="abschnitt">
+<section id="bewertungen" class="abschnitt">
+  <div class="breite">
+    <h2>الآراء والتقييمات</h2>
+    <p class="einleitung">ما رأيك في إيموك؟ رأيك يساعد على تحسين البرنامج.</p>
+    <p id="bw-gesamt" class="bw-gesamt"></p>
+    <div id="bw-liste" class="raster drei bw-liste"></div>
+    <form id="bw-form" class="karte bw-form" autocomplete="off">
+      <h3>تقييمك</h3>
+      <div class="stern-wahl" role="group" aria-label="النجوم"><button type="button" aria-label="نجمة واحدة">★</button><button type="button" aria-label="نجمتان">★</button><button type="button" aria-label="3 نجوم">★</button><button type="button" aria-label="4 نجوم">★</button><button type="button" aria-label="5 نجوم">★</button></div>
+      <label>رأيك<textarea name="text" rows="4" maxlength="1200" placeholder="ما الذي يعجبك، وما الذي ينقص؟"></textarea></label>
+      <label>الاسم للعرض (مثل &bdquo;أنا ك.&ldquo;، اختياري)<input type="text" name="name" maxlength="40"></label>
+      <label class="bw-zust"><input type="checkbox" name="zustimmung"><span>أوافق على نشر تقييمي بهذا الاسم على هذا الموقع (يمكن سحب الموافقة في أي وقت عبر البريد الإلكتروني).</span></label>
+      <p id="bw-meldung" class="klein bw-fehler" hidden></p>
+      <button type="submit" class="knopf">إرسال بالبريد الإلكتروني</button>
+      <p id="bw-danke" class="klein bw-ok" hidden>شكرًا! سيفتح برنامج البريد – يرجى إرسال الرسالة.</p>
+    </form>
+    <p class="klein grau bw-pruefung"><b>كيف نتحقق من التقييمات:</b> ننشر فقط التقييمات التي تصلنا عبر البريد الإلكتروني من المختبرين الذين وافقوا على النشر. نقرأ كل تقييم قبل نشره، وننشر التقييمات الإيجابية والسلبية على حد سواء، ونحذف فقط المحتوى المسيء أو المخالف للقانون. لا يُدفع أو يُعرض أي مقابل للتقييمات.</p>
+  </div>
+</section>
+<section id="fragen" class="abschnitt hell-hg">
   <div class="breite schmal">
     <h2>أسئلة شائعة</h2>
     <details><summary>أين تُحفظ بياناتي؟</summary><p>مشفّرة على حاسوبك. إذا استخدمت الحاسوب والهاتف معًا، تختار مجلدًا سحابيًا خاصًا بك (OneDrive أو iCloud Drive أو Google Drive). الشركة لا تستطيع الوصول إليها.</p></details>
@@ -239,6 +258,6 @@
     يُستخدم روبوت أندرويد مستنسخًا أو معدّلًا من عمل أنشأته Google وشاركته، وفقًا لشروط رخصة المشاع الإبداعي „نَسب المُصنَّف 3.0“.
     عند الشك تكون النسخة الألمانية من النصوص القانونية هي الملزمة.</p></div>
 </footer>
-<script src="../rechner-daten.js"></script><script src="../rechner.js"></script><script src="../seite.js"></script>
+<script src="../rechner-daten.js"></script><script src="../rechner.js"></script><script src="../bewertungen-daten.js"></script><script src="../bewertung.js"></script><script src="../seite.js"></script>
 </body>
 </html>
