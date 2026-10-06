@@ -246,6 +246,10 @@
     zeige(0, false);
     f.addEventListener("submit", async function (event) {
       event.preventDefault();
+      if (aktiv < schritte.length - 1) {
+        if (pruefeSchritt(aktiv)) zeige(aktiv + 1, true);
+        return;
+      }
       for (var i = 0; i < schritte.length; i++) {
         if (!pruefeSchritt(i, i === aktiv)) {
           zeige(i, true);
