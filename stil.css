@@ -116,6 +116,22 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .balken-bleibt { background: var(--gruen); transition: width .3s; }
 .balken-ruecklage { background: #E6A23C; transition: width .3s; }
 .rechner-hinweis { margin-top: 14px; max-width: 900px; }
+.rechner-eingabe .breit, .rechner-eingabe .schnellwahl { grid-column: 1 / -1; }
+.schnellwahl { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; color: var(--grau); font-size: .92rem; }
+.schnellwahl button { font: inherit; font-weight: 600; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--linie); background: #fff; color: var(--navy); cursor: pointer; }
+.schnellwahl button.aktiv { background: var(--navy); color: #fff; border-color: var(--navy); }
+.schieber { width: 100%; accent-color: var(--gruen); }
+.haken-feld { flex-direction: row !important; align-items: center; gap: 10px !important; color: var(--text) !important; }
+.haken-feld input { width: 18px !important; height: 18px; accent-color: var(--navy); }
+.rechner-tabelle { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.rechner-tabelle th { text-align: end; font-weight: 600; color: var(--grau); font-size: .85rem; padding: 0 0 6px; }
+.rechner-tabelle td { padding: 6px 0; border-bottom: 1px solid var(--linie); }
+.rechner-tabelle td + td { text-align: end; padding-inline-start: 12px; white-space: nowrap; }
+.rechner-tabelle .zwischensumme td { font-weight: 600; color: #B26A00; }
+.rechner-tabelle .summe td { border-bottom: none; font-size: 1.2rem; font-weight: 700; color: var(--gruen); }
+.gesperrt-rechnung .rechner-tabelle td + td, .gesperrt-rechnung .balken-rechner { opacity: .25; }
+.rechner-hinweise { grid-column: 1 / -1; }
+.rechner-hinweise h3 { margin-top: 0; }
 #sicherheit details { margin-top: 12px; }
 
 /* Zähler und Dankeschön */

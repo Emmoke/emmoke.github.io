@@ -9,8 +9,8 @@
 <link rel="alternate" hreflang="en" href="https://emmoke.github.io/en/">
 <link rel="alternate" hreflang="ar" href="https://emmoke.github.io/ar/">
 <link rel="icon" href="../bilder/logo.png">
-<link rel="stylesheet" href="../stil.css">
-<script src="../konfig.js"></script>
+<link rel="stylesheet" href="../stil.css?v=0.16.0.40-202610061359">
+<script src="../konfig.js?v=0.16.0.40-202610061359"></script>
 </head>
 <body>
 <header class="kopf">
@@ -76,26 +76,39 @@
 
 <section id="beispiel" class="abschnitt rechner-hg">
   <div class="breite">
-    <h2>Example: €600 on the side – what is left?</h2>
-    <p class="einleitung">Enter your figures. The calculation uses the same logic as the net calculator in the program.</p>
+    <h2>Calculator: What is left from your side business?</h2>
+    <p class="einleitung">Just try it: tap or type a turnover, adjust costs and salary – the result changes immediately. The calculation uses the same logic as the net calculator in the program.</p>
     <form id="rechner" class="rechner" autocomplete="off">
       <div class="karte rechner-eingabe">
-        <label>Turnover per month (€)<input type="number" name="umsatz" value="600" min="0" max="5000" step="10" inputmode="decimal"></label>
-        <label>Costs per month (€)<input type="number" name="kosten" value="100" min="0" max="5000" step="10" inputmode="decimal"></label>
-        <label>Gross salary from your job<select name="brutto"><option value="2000">2.000 €</option><option value="2500">2.500 €</option><option value="3000" selected>3.000 €</option><option value="3500">3.500 €</option><option value="4000">4.000 €</option><option value="5000">5.000 €</option></select></label>
+        <div class="schnellwahl"><span>Quick turnover:</span><button type="button" data-umsatz="300">300 €</button><button type="button" data-umsatz="600">600 €</button><button type="button" data-umsatz="1000">1.000 €</button><button type="button" data-umsatz="2000">2.000 €</button></div>
+        <label class="breit">Turnover per month (€)<input type="number" name="umsatz" value="600" min="0" max="20000" step="10" inputmode="decimal"></label>
+        <input type="range" name="schieber" class="schieber breit" min="0" max="6000" step="50" value="600" aria-label="Turnover per month (€)">
+        <label>Costs per month (€)<input type="number" name="kosten" value="100" min="0" max="20000" step="10" inputmode="decimal"></label>
+        <label>Gross salary from your job (€ per month)<input type="number" name="brutto" value="3000" min="1500" max="6000" step="100" inputmode="decimal"></label>
         <label>Family<select name="profil"><option value="ledig" selected>single (tax class I)</option><option value="iv">married, both earn the same (IV)</option><option value="iii">married, partner without income (III)</option></select></label>
+        <label class="haken-feld"><input type="checkbox" name="kirche"><span>Pay church tax (9 %)</span></label>
+        <p class="klein grau breit" data-aus="brutto-hinweis" hidden>Gross salary outside €1,500–6,000 – calculated with the nearest value.</p>
       </div>
       <div class="karte rechner-ergebnis">
-        <div class="zeile"><span>Profit per month</span><b data-aus="gewinn"></b></div>
-        <div class="zeile"><span>additional income tax</span><b data-aus="steuer"></b></div>
-        <div class="zeile"><span>trade tax, health insurance, chamber</span><b data-aus="abgaben"></b></div>
-        <div class="zeile summe"><span>left for you per month</span><b data-aus="bleibt"></b></div>
+        <table class="rechner-tabelle">
+          <thead><tr><th></th><th>per month</th><th>per year</th></tr></thead>
+          <tbody>
+          <tr><td>Profit</td><td data-aus="gewinn"></td><td data-aus="gewinn-jahr"></td></tr>
+          <tr><td>− Income tax (additional)</td><td data-aus="steuer"></td><td data-aus="steuer-jahr"></td></tr>
+          <tr><td>− Trade tax</td><td data-aus="gewst"></td><td data-aus="gewst-jahr"></td></tr>
+          <tr><td>− Health/care insurance</td><td data-aus="kv"></td><td data-aus="kv-jahr"></td></tr>
+          <tr><td>− Chamber fee (IHK)</td><td data-aus="kammer"></td><td data-aus="kammer-jahr"></td></tr>
+          <tr class="zwischensumme"><td>= set aside</td><td data-aus="ruecklage"></td><td data-aus="ruecklage-jahr"></td></tr>
+          <tr class="summe"><td>left for you</td><td data-aus="bleibt"></td><td data-aus="bleibt-jahr"></td></tr>
+          </tbody>
+        </table>
         <div class="balken-rechner"><span class="balken-bleibt"></span><span class="balken-ruecklage"></span></div>
         <p class="klein" data-aus="quote"></p>
-        <p class="klein grau" data-aus="grenze" hidden>The example goes up to €2,000 profit per month – above that, please use the program.</p>
+        <p class="klein grau" data-aus="grenze" hidden>The example goes up to €5,000 profit per month – above that, please use the program.</p>
       </div>
+      <div class="karte rechner-hinweise"><h3>Good to know</h3><ul class="haken klein" data-aus="hinweise"></ul></div>
     </form>
-    <p class="klein grau rechner-hinweis"><b>Example calculation – not tax advice.</b> German tax year 2026, no children, no church tax, side business next to employment (statutory health insurance via the job), values between €50 steps interpolated. The program calculates your exact case with your own data. Your input stays in your browser.</p>
+    <p class="klein grau rechner-hinweis"><b>Example calculation – not tax advice.</b> German tax year 2026, no children, church tax optional 9 %, side business next to employment (statutory health insurance via the job), values between steps interpolated. The program calculates your exact case with your own data. Your input stays in your browser.</p>
   </div>
 </section>
 <section id="bilder" class="abschnitt hell-hg">
@@ -268,6 +281,6 @@
     The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License.
     In case of doubt, the German version of the legal texts is binding.</p></div>
 </footer>
-<script src="../rechner-daten.js"></script><script src="../rechner.js"></script><script src="../bewertungen-daten.js"></script><script src="../bewertung.js"></script><script src="../seite.js"></script>
+<script src="../rechner-daten.js?v=0.16.0.40-202610061359"></script><script src="../rechner.js?v=0.16.0.40-202610061359"></script><script src="../bewertungen-daten.js?v=0.16.0.40-202610061359"></script><script src="../bewertung.js?v=0.16.0.40-202610061359"></script><script src="../seite.js?v=0.16.0.40-202610061359"></script>
 </body>
 </html>

@@ -9,8 +9,8 @@
 <link rel="alternate" hreflang="en" href="https://emmoke.github.io/en/">
 <link rel="alternate" hreflang="ar" href="https://emmoke.github.io/ar/">
 <link rel="icon" href="bilder/logo.png">
-<link rel="stylesheet" href="stil.css">
-<script src="konfig.js"></script>
+<link rel="stylesheet" href="stil.css?v=0.16.0.40-202610061359">
+<script src="konfig.js?v=0.16.0.40-202610061359"></script>
 </head>
 <body>
 <header class="kopf">
@@ -76,26 +76,39 @@
 
 <section id="beispiel" class="abschnitt rechner-hg">
   <div class="breite">
-    <h2>Beispiel: 600 € nebenbei – was bleibt?</h2>
-    <p class="einleitung">Tragen Sie Ihre Zahlen ein. Gerechnet wird mit derselben Logik wie im Netto-Rechner des Programms.</p>
+    <h2>Rechner: Was bleibt vom Nebengewerbe?</h2>
+    <p class="einleitung">Einfach ausprobieren: Umsatz antippen oder eintippen, Kosten und Gehalt anpassen – das Ergebnis ändert sich sofort. Gerechnet wird mit derselben Logik wie im Netto-Rechner des Programms.</p>
     <form id="rechner" class="rechner" autocomplete="off">
       <div class="karte rechner-eingabe">
-        <label>Umsatz im Monat (€)<input type="number" name="umsatz" value="600" min="0" max="5000" step="10" inputmode="decimal"></label>
-        <label>Kosten im Monat (€)<input type="number" name="kosten" value="100" min="0" max="5000" step="10" inputmode="decimal"></label>
-        <label>Bruttogehalt im Job<select name="brutto"><option value="2000">2.000 €</option><option value="2500">2.500 €</option><option value="3000" selected>3.000 €</option><option value="3500">3.500 €</option><option value="4000">4.000 €</option><option value="5000">5.000 €</option></select></label>
+        <div class="schnellwahl"><span>Schnellwahl Umsatz:</span><button type="button" data-umsatz="300">300 €</button><button type="button" data-umsatz="600">600 €</button><button type="button" data-umsatz="1000">1.000 €</button><button type="button" data-umsatz="2000">2.000 €</button></div>
+        <label class="breit">Umsatz im Monat (€)<input type="number" name="umsatz" value="600" min="0" max="20000" step="10" inputmode="decimal"></label>
+        <input type="range" name="schieber" class="schieber breit" min="0" max="6000" step="50" value="600" aria-label="Umsatz im Monat (€)">
+        <label>Kosten im Monat (€)<input type="number" name="kosten" value="100" min="0" max="20000" step="10" inputmode="decimal"></label>
+        <label>Bruttogehalt im Job (€ im Monat)<input type="number" name="brutto" value="3000" min="1500" max="6000" step="100" inputmode="decimal"></label>
         <label>Familie<select name="profil"><option value="ledig" selected>ledig (Steuerklasse I)</option><option value="iv">verheiratet, beide verdienen gleich (IV)</option><option value="iii">verheiratet, Partner ohne Einkommen (III)</option></select></label>
+        <label class="haken-feld"><input type="checkbox" name="kirche"><span>Kirchensteuer zahlen (9 %)</span></label>
+        <p class="klein grau breit" data-aus="brutto-hinweis" hidden>Bruttogehalt außerhalb 1.500–6.000 € – gerechnet mit dem nächsten Wert.</p>
       </div>
       <div class="karte rechner-ergebnis">
-        <div class="zeile"><span>Gewinn im Monat</span><b data-aus="gewinn"></b></div>
-        <div class="zeile"><span>zusätzliche Einkommensteuer</span><b data-aus="steuer"></b></div>
-        <div class="zeile"><span>Gewerbesteuer, Krankenversicherung, Kammer</span><b data-aus="abgaben"></b></div>
-        <div class="zeile summe"><span>bleibt Ihnen im Monat</span><b data-aus="bleibt"></b></div>
+        <table class="rechner-tabelle">
+          <thead><tr><th></th><th>im Monat</th><th>im Jahr</th></tr></thead>
+          <tbody>
+          <tr><td>Gewinn</td><td data-aus="gewinn"></td><td data-aus="gewinn-jahr"></td></tr>
+          <tr><td>− Einkommensteuer (zusätzlich)</td><td data-aus="steuer"></td><td data-aus="steuer-jahr"></td></tr>
+          <tr><td>− Gewerbesteuer</td><td data-aus="gewst"></td><td data-aus="gewst-jahr"></td></tr>
+          <tr><td>− Kranken-/Pflegeversicherung</td><td data-aus="kv"></td><td data-aus="kv-jahr"></td></tr>
+          <tr><td>− Kammerbeitrag (IHK)</td><td data-aus="kammer"></td><td data-aus="kammer-jahr"></td></tr>
+          <tr class="zwischensumme"><td>= zurücklegen</td><td data-aus="ruecklage"></td><td data-aus="ruecklage-jahr"></td></tr>
+          <tr class="summe"><td>bleibt Ihnen</td><td data-aus="bleibt"></td><td data-aus="bleibt-jahr"></td></tr>
+          </tbody>
+        </table>
         <div class="balken-rechner"><span class="balken-bleibt"></span><span class="balken-ruecklage"></span></div>
         <p class="klein" data-aus="quote"></p>
-        <p class="klein grau" data-aus="grenze" hidden>Die Beispielrechnung reicht bis 2.000 € Gewinn im Monat – darüber bitte im Programm rechnen.</p>
+        <p class="klein grau" data-aus="grenze" hidden>Die Beispielrechnung reicht bis 5.000 € Gewinn im Monat – darüber bitte im Programm rechnen.</p>
       </div>
+      <div class="karte rechner-hinweise"><h3>Das sollten Sie wissen</h3><ul class="haken klein" data-aus="hinweise"></ul></div>
     </form>
-    <p class="klein grau rechner-hinweis"><b>Beispielrechnung – keine Steuerberatung.</b> Steuerjahr 2026, ohne Kinder, ohne Kirchensteuer, Gewerbe im Nebenberuf (gesetzlich krankenversichert über den Job), Werte zwischen 50-€-Stufen gemittelt. Ihre genaue Rechnung macht das Programm mit Ihren eigenen Angaben. Die Eingaben bleiben in Ihrem Browser.</p>
+    <p class="klein grau rechner-hinweis"><b>Beispielrechnung – keine Steuerberatung.</b> Steuerjahr 2026, ohne Kinder, Kirchensteuer wahlweise 9 %, Gewerbe im Nebenberuf (gesetzlich krankenversichert über den Job), Werte zwischen den Stufen gemittelt. Ihre genaue Rechnung macht das Programm mit Ihren eigenen Angaben. Die Eingaben bleiben in Ihrem Browser.</p>
   </div>
 </section>
 <section id="bilder" class="abschnitt hell-hg">
@@ -267,6 +280,6 @@
     Genannte Marken (z. B. ELSTER, Microsoft, OneDrive, Google, Android, Apple, iPhone) gehören ihren Inhabern; Emmoke steht in keiner Verbindung zu ihnen. Die Symbole für Windows und iPhone sind eigene Zeichnungen, keine Logos der Hersteller.
     Der Android-Roboter wird nach der Vorlage von Google wiedergegeben bzw. verändert und gemäß der Creative-Commons-Lizenz „Namensnennung 3.0“ verwendet.</p></div>
 </footer>
-<script src="rechner-daten.js"></script><script src="rechner.js"></script><script src="bewertungen-daten.js"></script><script src="bewertung.js"></script><script src="seite.js"></script>
+<script src="rechner-daten.js?v=0.16.0.40-202610061359"></script><script src="rechner.js?v=0.16.0.40-202610061359"></script><script src="bewertungen-daten.js?v=0.16.0.40-202610061359"></script><script src="bewertung.js?v=0.16.0.40-202610061359"></script><script src="seite.js?v=0.16.0.40-202610061359"></script>
 </body>
 </html>

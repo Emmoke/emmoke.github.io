@@ -9,8 +9,8 @@
 <link rel="alternate" hreflang="en" href="https://emmoke.github.io/en/">
 <link rel="alternate" hreflang="ar" href="https://emmoke.github.io/ar/">
 <link rel="icon" href="../bilder/logo.png">
-<link rel="stylesheet" href="../stil.css">
-<script src="../konfig.js"></script>
+<link rel="stylesheet" href="../stil.css?v=0.16.0.40-202610061359">
+<script src="../konfig.js?v=0.16.0.40-202610061359"></script>
 </head>
 <body>
 <header class="kopf">
@@ -76,26 +76,39 @@
 
 <section id="beispiel" class="abschnitt rechner-hg">
   <div class="breite">
-    <h2>مثال: 600 يورو دخل جانبي – كم يتبقى؟</h2>
-    <p class="einleitung">أدخل أرقامك. يتم الحساب بنفس منطق حاسبة الصافي في البرنامج.</p>
+    <h2>حاسبة: كم يتبقى من عملك الحر الجانبي؟</h2>
+    <p class="einleitung">جرّب ببساطة: اختر الإيرادات أو اكتبها، وعدّل التكاليف والراتب – تتغير النتيجة فورًا. يتم الحساب بنفس منطق حاسبة الصافي في البرنامج.</p>
     <form id="rechner" class="rechner" autocomplete="off">
       <div class="karte rechner-eingabe">
-        <label>الإيرادات شهريًا (€)<input type="number" name="umsatz" value="600" min="0" max="5000" step="10" inputmode="decimal"></label>
-        <label>التكاليف شهريًا (€)<input type="number" name="kosten" value="100" min="0" max="5000" step="10" inputmode="decimal"></label>
-        <label>الراتب الإجمالي من الوظيفة<select name="brutto"><option value="2000">2.000 €</option><option value="2500">2.500 €</option><option value="3000" selected>3.000 €</option><option value="3500">3.500 €</option><option value="4000">4.000 €</option><option value="5000">5.000 €</option></select></label>
+        <div class="schnellwahl"><span>اختيار سريع للإيرادات:</span><button type="button" data-umsatz="300">300 €</button><button type="button" data-umsatz="600">600 €</button><button type="button" data-umsatz="1000">1.000 €</button><button type="button" data-umsatz="2000">2.000 €</button></div>
+        <label class="breit">الإيرادات شهريًا (€)<input type="number" name="umsatz" value="600" min="0" max="20000" step="10" inputmode="decimal"></label>
+        <input type="range" name="schieber" class="schieber breit" min="0" max="6000" step="50" value="600" aria-label="الإيرادات شهريًا (€)">
+        <label>التكاليف شهريًا (€)<input type="number" name="kosten" value="100" min="0" max="20000" step="10" inputmode="decimal"></label>
+        <label>الراتب الإجمالي من الوظيفة (€ شهريًا)<input type="number" name="brutto" value="3000" min="1500" max="6000" step="100" inputmode="decimal"></label>
         <label>الحالة العائلية<select name="profil"><option value="ledig" selected>أعزب (الفئة الضريبية I)</option><option value="iv">متزوج، الدخل متساوٍ (IV)</option><option value="iii">متزوج، الشريك بدون دخل (III)</option></select></label>
+        <label class="haken-feld"><input type="checkbox" name="kirche"><span>دفع ضريبة الكنيسة (9 %)</span></label>
+        <p class="klein grau breit" data-aus="brutto-hinweis" hidden>الراتب خارج نطاق 1.500–6.000 يورو – تم الحساب بأقرب قيمة.</p>
       </div>
       <div class="karte rechner-ergebnis">
-        <div class="zeile"><span>الربح شهريًا</span><b data-aus="gewinn"></b></div>
-        <div class="zeile"><span>ضريبة دخل إضافية</span><b data-aus="steuer"></b></div>
-        <div class="zeile"><span>ضريبة تجارية، تأمين صحي، غرفة</span><b data-aus="abgaben"></b></div>
-        <div class="zeile summe"><span>يتبقى لك شهريًا</span><b data-aus="bleibt"></b></div>
+        <table class="rechner-tabelle">
+          <thead><tr><th></th><th>شهريًا</th><th>سنويًا</th></tr></thead>
+          <tbody>
+          <tr><td>الربح</td><td data-aus="gewinn"></td><td data-aus="gewinn-jahr"></td></tr>
+          <tr><td>− ضريبة الدخل (الإضافية)</td><td data-aus="steuer"></td><td data-aus="steuer-jahr"></td></tr>
+          <tr><td>− الضريبة التجارية</td><td data-aus="gewst"></td><td data-aus="gewst-jahr"></td></tr>
+          <tr><td>− التأمين الصحي/الرعاية</td><td data-aus="kv"></td><td data-aus="kv-jahr"></td></tr>
+          <tr><td>− رسوم الغرفة (IHK)</td><td data-aus="kammer"></td><td data-aus="kammer-jahr"></td></tr>
+          <tr class="zwischensumme"><td>= للادخار</td><td data-aus="ruecklage"></td><td data-aus="ruecklage-jahr"></td></tr>
+          <tr class="summe"><td>يتبقى لك</td><td data-aus="bleibt"></td><td data-aus="bleibt-jahr"></td></tr>
+          </tbody>
+        </table>
         <div class="balken-rechner"><span class="balken-bleibt"></span><span class="balken-ruecklage"></span></div>
         <p class="klein" data-aus="quote"></p>
-        <p class="klein grau" data-aus="grenze" hidden>المثال يصل حتى 2.000 يورو ربح شهريًا – لما فوق ذلك يرجى استخدام البرنامج.</p>
+        <p class="klein grau" data-aus="grenze" hidden>المثال يصل حتى 5.000 يورو ربح شهريًا – لما فوق ذلك يرجى استخدام البرنامج.</p>
       </div>
+      <div class="karte rechner-hinweise"><h3>من المفيد أن تعرف</h3><ul class="haken klein" data-aus="hinweise"></ul></div>
     </form>
-    <p class="klein grau rechner-hinweis"><b>مثال حسابي – ليس استشارة ضريبية.</b> السنة الضريبية 2026 في ألمانيا، بدون أطفال، بدون ضريبة كنيسة، عمل حر جانبي بجانب وظيفة (تأمين صحي قانوني عبر الوظيفة)، القيم بين درجات 50 يورو محسوبة تقريبيًا. يحسب البرنامج حالتك بدقة ببياناتك. إدخالاتك تبقى في متصفحك.</p>
+    <p class="klein grau rechner-hinweis"><b>مثال حسابي – ليس استشارة ضريبية.</b> السنة الضريبية 2026 في ألمانيا، بدون أطفال، ضريبة الكنيسة اختيارية 9 %، عمل حر جانبي بجانب وظيفة (تأمين صحي قانوني عبر الوظيفة)، القيم بين الدرجات محسوبة تقريبيًا. يحسب البرنامج حالتك بدقة ببياناتك. إدخالاتك تبقى في متصفحك.</p>
   </div>
 </section>
 <section id="bilder" class="abschnitt hell-hg">
@@ -268,6 +281,6 @@
     يُستخدم روبوت أندرويد مستنسخًا أو معدّلًا من عمل أنشأته Google وشاركته، وفقًا لشروط رخصة المشاع الإبداعي „نَسب المُصنَّف 3.0“.
     عند الشك تكون النسخة الألمانية من النصوص القانونية هي الملزمة.</p></div>
 </footer>
-<script src="../rechner-daten.js"></script><script src="../rechner.js"></script><script src="../bewertungen-daten.js"></script><script src="../bewertung.js"></script><script src="../seite.js"></script>
+<script src="../rechner-daten.js?v=0.16.0.40-202610061359"></script><script src="../rechner.js?v=0.16.0.40-202610061359"></script><script src="../bewertungen-daten.js?v=0.16.0.40-202610061359"></script><script src="../bewertung.js?v=0.16.0.40-202610061359"></script><script src="../seite.js?v=0.16.0.40-202610061359"></script>
 </body>
 </html>
