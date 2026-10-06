@@ -189,6 +189,12 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .link-karte:hover { transform: translateY(-2px); box-shadow: var(--schatten); }
 .link-karte p { color: var(--akzent); margin: 0; }
 
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { background: #EEF3FB; color: var(--navy); border-radius: 999px; padding: 5px 12px; font-size: .9rem; font-weight: 600; }
+.quali-breit { grid-column: 1 / -1; }
+.quali h3 { margin-top: 0; }
+.quali h3 + p, .quali h3 + ul { margin-bottom: 16px; }
+
 /* Arabisch: von rechts nach links */
 [dir="rtl"] body { font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", "Noto Sans Arabic", Arial, sans-serif; line-height: 1.75; }
 [dir="rtl"] .haken li { padding-left: 0; padding-right: 30px; }
