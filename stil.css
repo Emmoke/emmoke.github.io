@@ -77,6 +77,11 @@ nav a:hover { color: var(--akzent); }
 .zustimmung input { width: 20px; height: 20px; margin-top: 3px; flex: none; accent-color: var(--navy); }
 .zustimmung p { margin: 8px 0 0 32px; }
 .gesperrt { opacity: .45; cursor: not-allowed; }
+.wer-logo { max-width: 160px; margin: auto; }
+.unten-hinweis { margin-top: 18px; }
+.anschrift-ltr { text-align: right; }
+.herkunft { max-width: 820px; margin: 14px auto 0; text-align: center; }
+.herkunft code { background: var(--hell); padding: 1px 5px; border-radius: 4px; }
 .pruefsumme { font-family: Consolas, "Courier New", monospace; font-size: .72rem; color: var(--grau); word-break: break-all; direction: ltr; text-align: left; margin: 0 0 10px !important; }
 .dl .knopf { margin-top: auto; text-align: center; }
 

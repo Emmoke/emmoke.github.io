@@ -1,5 +1,7 @@
 // Gemeinsames Skript der Startseiten (de, en, ar): Version, Download-Links, Zustimmung vor dem Download, Download-Zähler.
 (function () {
+  // Nicht in fremden Seiten einbetten lassen (Schutz gegen gefälschte Rahmen-Seiten / Clickjacking)
+  if (window.top !== window.self) { window.top.location = window.self.location.href; return; }
   var k = window.EMMOKE || {};
   var sprache = (document.documentElement.lang || "de").slice(0, 2);
   var T = {
@@ -21,7 +23,7 @@
   link("kontakt", k.kontaktEmail ? "mailto:" + k.kontaktEmail : "", T.kontakt);
 
   // SHA-256-Prüfsummen der Downloads (schreibt webseite_veroeffentlichen.ps1 in konfig.js) – zum Prüfen, dass die Datei unverändert ist
-  [["sha-windows", k.sha256Windows], ["sha-android", k.sha256Android]].forEach(function (p) {
+  [["sha-windows", k.sha256Windows], ["sha-android", k.sha256Android], ["zert-android", k.zertifikatAndroid]].forEach(function (p) {
     var e = document.getElementById(p[0]);
     if (!e || !p[1]) return;
     e.textContent = (e.dataset.titel || "SHA-256") + ": " + p[1];
