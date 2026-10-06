@@ -234,6 +234,13 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .seo-inhalt ul { padding-left: 20px; }
 .brotkrumen { font-size: .9rem; color: var(--grau); margin: 0 0 8px; }
 
+.symbol-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 0; }
+.symbol-links a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px solid var(--linie); border-radius: 10px; background: #fff; color: var(--navy); font-weight: 600; text-decoration: none; transition: box-shadow .15s, transform .15s; }
+.symbol-links a:hover { transform: translateY(-1px); box-shadow: var(--schatten); }
+.symbol-links svg { width: 22px; height: 22px; flex: none; }
+.chips a { background: #EEF3FB; color: var(--navy); border-radius: 999px; padding: 5px 12px; font-size: .9rem; font-weight: 600; text-decoration: none; }
+.chips a:hover { background: #DCE7F5; }
+
 /* Arabisch: von rechts nach links */
 [dir="rtl"] body { font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", "Noto Sans Arabic", Arial, sans-serif; line-height: 1.75; }
 [dir="rtl"] .haken li { padding-left: 0; padding-right: 30px; }
