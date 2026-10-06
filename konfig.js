@@ -7,5 +7,7 @@ window.EMMOKE = {
   downloadAndroid: "https://github.com/Emmoke/emmoke.github.io/releases/download/v0.16.0.38/EmmokeFinanzplan_Android_0.16.0.38.apk",
   downloadIos: "",            // App-Store-/TestFlight-Link, sobald vorhanden
   handbuch: "https://github.com/Emmoke/emmoke.github.io/releases/download/v0.16.0.38/Emmoke_Finanzplan_Benutzerhandbuch.pdf",
-  kontaktEmail: "emmoke@outlook.de"
+  kontaktEmail: "emmoke@outlook.de",
+  // Download-Zähler: summiert die Downloads aller Releases dieses öffentlichen Repositorys (GitHub-Schnittstelle, ohne Cookies)
+  zaehlerRepo: "Emmoke/emmoke.github.io"
 };

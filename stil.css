@@ -72,6 +72,11 @@ nav a:hover { color: var(--akzent); }
 .betrag span { font-size: 1rem; color: var(--grau); font-weight: 400; }
 .dl { display: flex; flex-direction: column; }
 .dl-symbol { width: 56px; height: 56px; margin-bottom: 10px; }
+.zustimmung { margin-bottom: 18px; border-left: 4px solid var(--akzent); }
+.zustimmung label { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; }
+.zustimmung input { width: 20px; height: 20px; margin-top: 3px; flex: none; accent-color: var(--navy); }
+.zustimmung p { margin: 8px 0 0 32px; }
+.gesperrt { opacity: .45; cursor: not-allowed; }
 .dl .knopf { margin-top: auto; text-align: center; }
 
 details { background: #fff; border: 1px solid var(--linie); border-radius: 10px; padding: 14px 18px; margin: 0 0 10px; }
