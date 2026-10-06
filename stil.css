@@ -315,6 +315,7 @@ details p { margin: 10px 0 0; color: #3a4655; }
   .leiste-innen { grid-template-columns: 1fr 1fr; }
   nav a:not(.knopf):not(.sprachen a):not(.tel-knopf) { display: none; }
   .menue-knopf { display: inline-grid; }
+  nav .tel-knopf { display: none; }
   .haupt-links { display: none; }
   .kopf.offen .haupt-links { display: flex; flex-direction: column; gap: 0; position: absolute; top: 64px; left: 0; right: 0; padding: 6px 16px 14px; background: #fff; border-bottom: 1px solid var(--linie); box-shadow: var(--schatten); }
   .kopf.offen .haupt-links a { display: block; padding: 12px 0; border-bottom: 1px solid var(--linie); font-weight: 600; }
