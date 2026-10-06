@@ -231,7 +231,7 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .zeitleiste b { display: block; color: var(--navy); }
 .zeitleiste span { color: #3a4655; font-size: .95rem; }
 .anfrage { display: grid; gap: 16px; }
-.anfrage fieldset { border: 1px solid var(--linie); border-radius: 10px; padding: 12px 16px; margin: 0; min-width: 0; }
+.anfrage fieldset { border: 1px solid var(--linie); border-radius: 10px; padding: 12px 16px; margin: 0; min-width: 0; background: linear-gradient(145deg, #fff, #fbfdff); }
 .anfrage legend { font-weight: 600; color: var(--navy); padding: 0 6px; }
 .anfrage-schritt { display: grid; gap: calc(var(--abstand) * 2); animation: anfrage-einblenden 240ms ease both; }
 @keyframes anfrage-einblenden { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
@@ -240,10 +240,10 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .anfrage .wahl input { width: 22px; height: 22px; margin: 0; flex: none; accent-color: var(--navy); }
 .anfrage .felder { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .anfrage label.feld { display: flex; flex-direction: column; gap: 6px; font-size: .92rem; color: var(--grau); }
-.anfrage input[type=text], .anfrage input[type=email], .anfrage textarea { min-height: 46px; font: inherit; color: var(--text); padding: 9px 11px; border: 1px solid var(--linie); border-radius: 9px; width: 100%; transition: border-color var(--bewegung), box-shadow var(--bewegung), background-color var(--bewegung); }
+.anfrage input[type=text], .anfrage input[type=email], .anfrage input[type=tel], .anfrage textarea { min-height: 46px; font: inherit; color: var(--text); padding: 9px 11px; border: 1px solid var(--linie); border-radius: 9px; width: 100%; transition: border-color var(--bewegung), box-shadow var(--bewegung), background-color var(--bewegung); }
 .anfrage textarea { min-height: auto; }
 .anfrage input:focus, .anfrage textarea:focus { outline: none; border-color: var(--akzent); box-shadow: var(--fokus); }
-.anfrage input:focus-visible, .anfrage textarea:focus-visible { outline: none; }
+.anfrage input:focus-visible, .anfrage textarea:focus-visible, .anfrage button:focus-visible { outline: 3px solid rgba(36, 104, 168, .55); outline-offset: 3px; }
 .anfrage-fehler { color: #9b1c1c; font-weight: 600; margin: 0; }
 .anfrage-review { background: var(--hell); border: 1px solid var(--linie); border-radius: 10px; padding: 16px; }
 .anfrage-review h3 { margin-bottom: 8px; }
@@ -263,7 +263,7 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .kachel:hover { border-color: var(--akzent); background: #f8faff; box-shadow: 0 6px 16px rgba(31, 56, 100, .12); transform: translateY(-2px); }
 .kachel input { width: 20px; height: 20px; margin: 0; flex: none; accent-color: var(--navy); }
 .kachel svg { width: 24px; height: 24px; flex: none; color: var(--akzent); }
-.kachel:has(input:checked) { border-color: var(--navy); background: #EEF3FB; box-shadow: inset 0 0 0 1px var(--navy), 0 5px 14px rgba(31, 56, 100, .14); transform: scale(1.015); }
+.kachel:has(input:checked) { border-color: var(--navy); background: #EEF3FB; box-shadow: inset 0 0 0 1px var(--navy), 0 5px 14px rgba(31, 56, 100, .14); transform: translateY(-1px); }
 .kachel:has(input:checked) svg { color: var(--navy); }
 .kachel:has(input:focus-visible) { outline: 2px solid var(--akzent); outline-offset: 2px; }
 .kachel input:focus-visible { outline: 3px solid var(--akzent); outline-offset: 3px; }
@@ -384,7 +384,7 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .anfrage { gap: 20px; box-shadow: 0 18px 48px rgba(31, 56, 100, .08); }
 .anfrage fieldset { border-radius: 14px; padding: 16px 18px; }
 .anfrage legend { font-size: 1.03rem; }
-.anfrage input[type=text], .anfrage input[type=email], .anfrage textarea,
+.anfrage input[type=text], .anfrage input[type=email], .anfrage input[type=tel], .anfrage textarea,
 .rechner input, .rechner select { min-height: 50px; border-color: #D6E0EB; border-radius: 11px; }
 .anfrage textarea { min-height: auto; }
 .anfrage input:hover, .anfrage textarea:hover, .rechner input:hover, .rechner select:hover { border-color: #AFC2D8; }

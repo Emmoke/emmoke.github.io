@@ -184,7 +184,7 @@
         <legend>1. Ihre Kontaktdaten</legend>
         <div class="felder">
           <label class="feld">Name<input type="text" id="a-name" autocomplete="name" placeholder="Vor- und Nachname" required minlength="2"></label><label class="feld">E-Mail<input type="email" id="a-email" autocomplete="email" required placeholder="name@beispiel.de"></label>
-          <label class="feld">Telefon<input type="text" id="a-tel" autocomplete="tel" inputmode="tel" placeholder="optional"></label>
+          <label class="feld">Telefon<input type="tel" id="a-tel" autocomplete="tel" placeholder="optional"></label>
         </div>
       </fieldset><fieldset>
         <legend>Projektstandort und Wunschtermin</legend>
@@ -214,7 +214,7 @@
           <label class="kachel"><input type="checkbox" name="unterlagen"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M12 6.5v11M6.5 12h11"/><circle cx="12" cy="12" r="2.6"/></svg><span>CAD / DWG / DXF</span></label>
           <label class="kachel"><input type="checkbox" name="unterlagen"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h13v13H7z"/><path d="M4 7h13v13H4zM4 7l3-3M17 7l3-3M17 20l3-3M4 20l3-3"/></svg><span>Revit / IFC</span></label>
           <label class="kachel"><input type="checkbox" name="unterlagen"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h4l2-3h6l2 3h4v12H3z"/><circle cx="12" cy="13.5" r="3.5"/></svg><span>Fotos</span></label>
-          <label class="kachel"><input type="checkbox" name="unterlagen"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg><span>Keine Unterlagen</span></label>
+          <label class="kachel"><input type="checkbox" name="unterlagen" data-ohne-unterlagen><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg><span>Keine Unterlagen</span></label>
         </div>
       </fieldset><fieldset>
         <legend>Erstgespräch – wie am liebsten?</legend>

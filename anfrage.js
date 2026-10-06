@@ -154,7 +154,18 @@
       fehler.hidden = true;
       if (aktiv === schritte.length - 1) aktualisiereZusammenfassung();
     });
-    f.addEventListener("change", function () {
+    f.addEventListener("change", function (event) {
+      var ausgewaehlt = event.target;
+      if (ausgewaehlt.matches('input[name="unterlagen"]')) {
+        var keineUnterlagen = f.querySelector('input[name="unterlagen"][data-ohne-unterlagen]');
+        if (ausgewaehlt === keineUnterlagen && keineUnterlagen.checked) {
+          f.querySelectorAll('input[name="unterlagen"]:checked').forEach(function (e) {
+            if (e !== keineUnterlagen) e.checked = false;
+          });
+        } else if (ausgewaehlt.checked && keineUnterlagen) {
+          keineUnterlagen.checked = false;
+        }
+      }
       if (aktiv === schritte.length - 1) aktualisiereZusammenfassung();
     });
 
