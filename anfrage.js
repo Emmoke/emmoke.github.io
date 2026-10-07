@@ -295,9 +295,9 @@
       for (var i = 0; i < schritte.length; i++) {
         if (!pruefeSchritt(i, i === aktiv)) {
           zeige(i, true);
+          var invalid = schritte[i].querySelector(":invalid");
           fehler.textContent = invalid === terminInput ? (d.lTerminFehler || "Choose a future weekday.") : (d.lFehler || "Please complete the required fields.");
           fehler.hidden = false;
-          var invalid = schritte[i].querySelector(":invalid");
           if (invalid) invalid.reportValidity();
           return;
         }
