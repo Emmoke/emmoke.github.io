@@ -15,8 +15,8 @@ window.EMMOKE = {
   // Leer = Knopf „Besprechungstermin buchen“ ausgeblendet. Vor dem Einschalten: Datenschutz um den Buchungsdienst ergänzen.
   terminLink: "",
   // Besuchszähler (GoatCounter, ohne Cookies): Code des eigenen GoatCounter-Kontos, z. B. "emmoke" für emmoke.goatcounter.com. Leer = kein Besuchszähler.
-  // Vor dem Einschalten: Datenschutz ergänzen und in der CSP aller Seiten img-src/connect-src um https://*.goatcounter.com erweitern.
-  besucheCode: "",
+  // Auf Seiten mit seite.js: GoatCounter zählt Seitenaufrufe ohne Cookies.
+  besucheCode: "emmoke",
   // Download-Zähler: summiert die Downloads aller Releases dieses öffentlichen Repositorys (GitHub-Schnittstelle, ohne Cookies)
   sha256Windows: "1b4e03b4e96860cb56ff6be9192a4472b39097afaebba7ede5696ebc4284f111",
   sha256Android: "ad34f26ef714417e7c2b0ec220b2c97a17ba9662122d05532d2ad60b01a1c9af",

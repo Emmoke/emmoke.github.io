@@ -104,11 +104,11 @@
       })
       .catch(function () { });
   }
-  if (z && /^[a-z0-9-]+$/.test(k.besucheCode || "")) {
+  if (/^[a-z0-9-]+$/.test(k.besucheCode || "")) {
     var basis = "https://" + k.besucheCode + ".goatcounter.com";
-    // Besuch zählen: nur Seite und Titel, keine Cookies, keine IP-Speicherung beim Dienst
+    // Besuch zählen: nur Seitenpfad und Titel, ohne Cookies
     new Image().src = basis + "/count?p=" + encodeURIComponent(location.pathname) + "&t=" + encodeURIComponent(document.title) + "&rnd=" + Math.random().toString(36).slice(2);
-    fetch(basis + "/counter/TOTAL.json")
+    if (z) fetch(basis + "/counter/TOTAL.json")
       .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
       .then(function (j) {
         var zahl = parseInt(String(j.count).replace(/\D/g, ""), 10);
