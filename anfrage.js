@@ -72,6 +72,8 @@
 
   var schritte = f.querySelectorAll(".anfrage-schritt");
   var knoepfe = f.querySelector(".anfrage-knoepfe");
+  var kundenTypLabel = f.querySelector('input[name="kundentyp"]');
+  kundenTypLabel = kundenTypLabel ? kundenTypLabel.closest("fieldset").querySelector("legend").textContent : "Customer type";
   if (schritte.length > 1 && knoepfe) {
     f.classList.add("stufig");
     var namen = (d.lStufen || "").split("|");
@@ -119,6 +121,30 @@
 
     var aktiv = 0;
     var punkte = fortschritt.querySelectorAll("li");
+    var leistungstypen = [
+      ["planung", "bau", "privat"],
+      ["planung", "bau", "privat"],
+      ["planung", "bau"],
+      ["planung", "bau"],
+      ["planung", "bau"],
+      ["planung", "bau"],
+      ["planung", "bau"],
+      ["planung", "bau", "privat"],
+      ["planung", "bau", "privat"],
+      ["planung", "bau", "privat"]
+    ];
+    function filterLeistungen() {
+      var typ = f.querySelector('input[name="kundentyp"]:checked');
+      var gewaehlt = typ ? typ.value : "";
+      f.querySelectorAll('input[name="leistung"]').forEach(function (input, index) {
+        var kachel = input.closest(".kachel");
+        var typen = leistungstypen[index] || [];
+        var sichtbar = gewaehlt === "sonstiges" || typen.indexOf(gewaehlt) !== -1;
+        kachel.hidden = !sichtbar;
+        if (!sichtbar) input.checked = false;
+      });
+    }
+
     function zeige(i, fokus) {
       aktiv = Math.max(0, Math.min(schritte.length - 1, i));
       schritte.forEach(function (s, k) { s.hidden = k !== aktiv; });
@@ -187,6 +213,7 @@
     });
     f.addEventListener("change", function (event) {
       var ausgewaehlt = event.target;
+      if (ausgewaehlt.matches('input[name="kundentyp"]')) filterLeistungen();
       if (ausgewaehlt.matches('input[name="unterlagen"]')) {
         var keineUnterlagen = f.querySelector('input[name="unterlagen"][data-ohne-unterlagen]');
         if (ausgewaehlt === keineUnterlagen && keineUnterlagen.checked) {
@@ -199,6 +226,7 @@
       }
       if (aktiv === schritte.length - 1) aktualisiereZusammenfassung();
     });
+    filterLeistungen();
 
     function aktualisiereZusammenfassung() {
       var liste = f.querySelector(".anfrage-review dl");
@@ -209,6 +237,7 @@
         [d.lTel, wert("a-tel")],
         [d.lOrt, wert("a-ort")],
         [d.lTermin, terminInput && terminInput.value ? terminInput.value + " (" + (d.lTerminzeit || "18:00–20:00") + ")" : "–"],
+        [kundenTypLabel, gewaehlt("kundentyp")],
         [d.lLeistung, gewaehlt("leistung")],
         [d.lUnterlagen, gewaehlt("unterlagen")],
         [d.lArt, gewaehlt("art")],
@@ -232,6 +261,7 @@
         d.lTel + ": " + wert("a-tel") + "\n\n" +
         d.lOrt + ": " + wert("a-ort") + "\n" +
         d.lTermin + ": " + (terminInput && terminInput.value ? terminInput.value + " (" + (d.lTerminzeit || "18:00–20:00") + ")" : "–") + "\n" +
+        kundenTypLabel + ": " + gewaehlt("kundentyp") + "\n" +
         d.lLeistung + ": " + gewaehlt("leistung") + "\n" +
         d.lUnterlagen + ": " + gewaehlt("unterlagen") + "\n" +
         d.lArt + ": " + gewaehlt("art") + "\n" +
