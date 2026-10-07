@@ -41,6 +41,28 @@
     return (e && e.value.trim()) || "–";
   }
 
+  var terminInput = document.getElementById("a-termin");
+  function pruefeTermin() {
+    if (!terminInput) return true;
+    var datum = terminInput.value;
+    if (!datum) {
+      terminInput.setCustomValidity("");
+      return true;
+    }
+    var wochentag = new Date(datum + "T00:00:00").getDay();
+    var heute = new Date();
+    heute.setHours(0, 0, 0, 0);
+    var ungueltig = datum < [heute.getFullYear(), ("0" + (heute.getMonth() + 1)).slice(-2), ("0" + heute.getDate()).slice(-2)].join("-") ||
+      wochentag === 0 || wochentag === 6;
+    terminInput.setCustomValidity(ungueltig ? (d.lTerminFehler || "Choose a future weekday.") : "");
+    return !ungueltig;
+  }
+  if (terminInput) {
+    var heute = new Date();
+    terminInput.min = [heute.getFullYear(), ("0" + (heute.getMonth() + 1)).slice(-2), ("0" + heute.getDate()).slice(-2)].join("-");
+    terminInput.addEventListener("change", pruefeTermin);
+  }
+
   function gewaehlt(name) {
     return Array.prototype.map.call(f.querySelectorAll('input[name="' + name + '"]:checked'), function (e) {
       var text = e.closest("label").querySelector("span");
@@ -120,6 +142,15 @@
     }
 
     function pruefeSchritt(index, rueckmeldung) {
+      if (terminInput && !pruefeTermin()) {
+        if (rueckmeldung !== false) {
+          fehler.textContent = d.lTerminFehler || "Choose a future weekday.";
+          fehler.hidden = false;
+          terminInput.reportValidity();
+          terminInput.focus();
+        }
+        return false;
+      }
       var erforderlich = schritte[index].querySelectorAll("[required]");
       for (var i = 0; i < erforderlich.length; i++) {
         if (!erforderlich[i].checkValidity()) {
@@ -177,7 +208,7 @@
         [d.lEmail, wert("a-email")],
         [d.lTel, wert("a-tel")],
         [d.lOrt, wert("a-ort")],
-        [d.lTermin, wert("a-termin")],
+        [d.lTermin, terminInput && terminInput.value ? terminInput.value + " (" + (d.lTerminzeit || "18:00–20:00") + ")" : "–"],
         [d.lLeistung, gewaehlt("leistung")],
         [d.lUnterlagen, gewaehlt("unterlagen")],
         [d.lArt, gewaehlt("art")],
@@ -200,7 +231,7 @@
         d.lEmail + ": " + wert("a-email") + "\n" +
         d.lTel + ": " + wert("a-tel") + "\n\n" +
         d.lOrt + ": " + wert("a-ort") + "\n" +
-        d.lTermin + ": " + wert("a-termin") + "\n" +
+        d.lTermin + ": " + (terminInput && terminInput.value ? terminInput.value + " (" + (d.lTerminzeit || "18:00–20:00") + ")" : "–") + "\n" +
         d.lLeistung + ": " + gewaehlt("leistung") + "\n" +
         d.lUnterlagen + ": " + gewaehlt("unterlagen") + "\n" +
         d.lArt + ": " + gewaehlt("art") + "\n" +
@@ -264,7 +295,7 @@
       for (var i = 0; i < schritte.length; i++) {
         if (!pruefeSchritt(i, i === aktiv)) {
           zeige(i, true);
-          fehler.textContent = d.lFehler || "Please complete the required fields.";
+          fehler.textContent = invalid === terminInput ? (d.lTerminFehler || "Choose a future weekday.") : (d.lFehler || "Please complete the required fields.");
           fehler.hidden = false;
           var invalid = schritte[i].querySelector(":invalid");
           if (invalid) invalid.reportValidity();
