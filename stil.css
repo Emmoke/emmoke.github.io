@@ -286,7 +286,7 @@ details p { margin: 10px 0 0; color: #3a4655; }
 .stufen-nav { display: flex; justify-content: space-between; gap: 12px; }
 .stufen-nav .knopf { font: inherit; font-weight: 600; cursor: pointer; }
 .stufen-nav .knopf:last-child { margin-inline-start: auto; }
-.anfrage-schritt[hidden], .anfrage fieldset[hidden], .stufen-nav [hidden], .anfrage-knoepfe[hidden] { display: none; }
+.anfrage-schritt[hidden], .anfrage fieldset[hidden], .anfrage .kachel[hidden], .stufen-nav [hidden], .anfrage-knoepfe[hidden] { display: none; }
 .fortschritt button { min-height: 44px; }
 .fortschritt li.aktiv .nr { box-shadow: 0 0 0 4px rgba(36, 104, 168, .13); }
 [dir="rtl"] .fortschritt li::before { left: auto; right: -50%; }
