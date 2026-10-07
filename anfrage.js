@@ -122,15 +122,15 @@
     var aktiv = 0;
     var punkte = fortschritt.querySelectorAll("li");
     var leistungstypen = [
-      ["planung", "bau", "privat"],
-      ["planung", "bau", "privat"],
+      ["privat"],
+      ["bau", "privat"],
+      ["planung", "bau"],
+      ["planung"],
       ["planung", "bau"],
       ["planung", "bau"],
       ["planung", "bau"],
-      ["planung", "bau"],
-      ["planung", "bau"],
-      ["planung", "bau", "privat"],
-      ["planung", "bau", "privat"],
+      ["privat"],
+      ["bau"],
       ["planung", "bau", "privat"]
     ];
     function filterLeistungen() {
